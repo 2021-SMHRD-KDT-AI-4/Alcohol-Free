@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            
+            div.left {
+                width: 50%;
+                float: left;
+
+            }
+            div.right {
+                margin-top: 250px;
+                margin-bottom: 258px;
+                width: 50%;
+                float: right;
+            }
+            div.container-fluid {
+                height: 50px;
+            }
+            /* 메인 이미지 마진 설정 */
+            
+        </style>
+    </head>
+    <body>
+        <br>
+        <!-- 상단 메뉴바 영역 -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Cocktail</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Home
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Comunity</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Mypage</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-sm-2" type="text" placeholder="Search">
+                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <!-- 상단 메뉴바 영역 종료 -->
+          <!-- 메인 이미지 -->
+          <div>
+            <div class="left">
+                <img id="Main_img" src="ex01.png">
+            </div>
+            <div class="right">
+                <h2>칵테일 추천 받을래???</h2>
+                <br>
+                <p>너는 지금 술이 준내 마시고싶다</p>
+                <p>고로 당장 마셔야 한다</p>
+                <p>그러니 우리는 추천해준다</p>
+                <br>
+                <br>
+                <button class="btn btn-lg btn-primary" type="button">추천받자</button>
+            </div>
+          </div>
+          <!-- 메인 이미지 종료 -->
+
+
+
+          <script src="js/bootstrap.js"></script>
+    </body>
+</html>
