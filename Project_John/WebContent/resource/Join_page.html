@@ -101,12 +101,12 @@
             </div>
 
             <div class="col-12">
-              <label for="email" class="form-label">이름</label>
+              <label for="name" class="form-label">이름</label>
               <input type="text" class="form-control" placeholder="이름을 입력하세요." id="NAME" _mstplaceholder="21193315">
             </div>
 
             <div class="col-12">
-                <label for="country" class="form-label">성별</label>
+                <label for="genader" class="form-label">성별</label>
                 <select class="form-select" id="GENDER" required>
                   <option value=""Choose>여자</option>
                   <option>남자</option>
@@ -114,19 +114,30 @@
               </div>
 
             <div class="col-12">
-              <label for="address" class="form-label">나이</label>
+              <label for="age" class="form-label">나이</label>
               <input type="text" class="form-control" placeholder="나이를 입력하세요." id="AGE" _mstplaceholder="21193315">
             </div>
 
             <div class="col-md-6">
-              <label for="address" class="form-label">선호하는 주종</label>
-              <input type="text" class="form-control" placeholder="선호하는 주종을 입력하세요." id="Alcohol_Type" _mstplaceholder="21193315">
+              <label for="alcohol_type" class="form-label">선호하는 주종</label>
+              <input type="text" class="form-control" placeholder="선호하는 주종을 입력하세요." id="ALCOHOL_TYPE" _mstplaceholder="21193315">
             </div>
 
             <div class="col-md-6">
-              <label for="address" class="form-label">주량</label>
-              <input type="text" class="form-control" placeholder="주량을 적어주세요." id="Alcohol_Capacity" _mstplaceholder="21193315">
+              <label for="alcohol_capacity" class="form-label">주량</label>
+              <input type="text" class="form-control" placeholder="주량을 적어주세요." id="ALCOHOL_CAPACITY" _mstplaceholder="21193315">
             </div>
+
+            <div class="col-12">
+                <label for="flavor" class="form-label">선호하는 맛</label>
+                <select class="form-select" id="FLAVOR" required>
+                  <option value=""Choose>단맛</option>
+                  <option>독한맛</option>
+                  <option>상쾌한맛</option>
+                  <option>신맛</option>
+                  <option>쓴맛</option>
+                </select>
+              </div>
 
           <hr class="my-4">
 
@@ -135,9 +146,16 @@
       </div>
     </div>
   </main>
-  <br>
-  <br>
-<br>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
