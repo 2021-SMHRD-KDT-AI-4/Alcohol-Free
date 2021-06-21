@@ -32,21 +32,21 @@
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Home
+                <a class="nav-link active" href="Main_page.jsp">Home
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Community</a>
+                <a class="nav-link" href="Community.jsp">Community</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="Login.jsp">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Mypage</a>
+                <a class="nav-link" href="Mypage.jsp">Mypage</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex" action="Serch_Service" method="post">>
               <input class="form-control me-sm-2" type="text" placeholder="Search">
               <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>

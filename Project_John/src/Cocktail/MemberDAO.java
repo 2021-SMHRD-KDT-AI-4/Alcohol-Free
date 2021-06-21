@@ -53,7 +53,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "INSERT INTO COCKTAIL VALUES(?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO W_USER VALUES(?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
@@ -63,6 +63,7 @@ public class MemberDAO {
 			psmt.setInt(6, dto.getAlcohol_capacity());
 			psmt.setString(7, dto.getAlcohol_type());
 			psmt.setString(8, dto.getFlavor());
+			
 			cnt = psmt.executeUpdate();
 			
 			if(cnt > 0){
@@ -86,7 +87,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "SELECT * FROM COCKTAIL WHERE ID = ? AND PW = ?";
+			String sql = "SELECT * FROM W_USER WHERE ID = ? AND PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
@@ -120,13 +121,16 @@ public class MemberDAO {
 		try {
 			getConnection();
 		
-			String sql = "UPDATE COCKTAIL SET PW = ?, Alcohol_capacity = ?, Alcohol_type = ?, FLAVOR = ? WHERE ID = ?";
+			String sql = "UPDATE W_USER SET User_PW = ?, Alcohol_capacity = ?, Alcohol_type = ?, FLAVOR = ? WHERE User_ID = ? AND USER_PW";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
 			psmt.setInt(2, dto.getAlcohol_capacity());
 			psmt.setString(3, dto.getAlcohol_type());
 			psmt.setString(4, dto.getFlavor());
 			psmt.setNString(5, dto.getId());
+			psmt.setNString(6, dto.getPw());
+			
+			
 			cnt = psmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -144,10 +148,9 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "SELECT * FROM COCKTAIL WHERE ID = ?";
+			String sql = "SELECT * FROM W_USER WHERE ID = ?";
 			
 			psmt = conn.prepareStatement(sql);
-			
 			psmt.setString(1, id);
 			
 			rs = psmt.executeQuery();	
