@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,7 +57,7 @@
     
 <main>
 
-    <h1>ì¹µí…Œì¼ ì •ë³´ ë”ë³´ê¸°</h1>
+    <h1>Ä¬Å×ÀÏ Á¤º¸ ´õº¸±â</h1>
     
     <br>
 
@@ -63,32 +65,32 @@
         <div class="row align-items-md-stretch">
           <div class="col-md-6 card border-primary mb-3">
               <div style="margin-top: 20px;">
-            <div class="card-header"><h2>ì¹µí…Œì¼ ì •ë³´</h2></div>
+            <div class="card-header"><h2>Ä¬Å×ÀÏ Á¤º¸</h2></div>
                 <div class="card-body">
-                    <h4 class="card-title">ë„ìˆ˜</h4>
-                    <p class="card-text">10ë„</p>
-                    <h4 class="card-title">ë§›</h4>
-                    <p class="card-text">ë‹¨ë§›</p>
+                    <h4 class="card-title">µµ¼ö</h4>
+                    <p class="card-text">10µµ</p>
+                    <h4 class="card-title">¸À</h4>
+                    <p class="card-text">´Ü¸À</p>
                 </div>
             </div>
           </div>
           <div class="col-md-6 card border-info mb-3">
             <div style="margin-top: 20px;">
-            <div class="card-header"><h2>ì¹µí…Œì¼ ë ˆì‹œí”¼</h2></div>
+            <div class="card-header"><h2>Ä¬Å×ÀÏ ·¹½ÃÇÇ</h2></div>
                 <div class="card-body">
-                    <h4 class="card-title">ë ˆì‹œí”¼</h4>
-                    <p class="card-text">1.ì¼ë²ˆì„ ë„£ëŠ”ë‹¤</p>
-                    <p class="card-text">2.ì´ë²ˆì„ ë„£ëŠ”ë‹¤</p>
-                    <p class="card-text">3.ì„žëŠ”ë‹¤</p>
-                    <p class="card-text">4.ë§ˆì‹ ë‹¤</p>
+                    <h4 class="card-title">·¹½ÃÇÇ</h4>
+                    <p class="card-text">1.ÀÏ¹øÀ» ³Ö´Â´Ù</p>
+                    <p class="card-text">2.ÀÌ¹øÀ» ³Ö´Â´Ù</p>
+                    <p class="card-text">3.¼¯´Â´Ù</p>
+                    <p class="card-text">4.¸¶½Å´Ù</p>
                 </div>
             </div>
         </div>
 
         <div class="card bg-light mb-3">
             <div class="container-fluid py-5 text-primary">
-              <h2 class="display-5 fw-bold">ìœ ëž˜</h2>
-              <p class="col-md-8 fs-4">ì¹µí…Œì¼ ìœ ëž˜</p>
+              <h2 class="display-5 fw-bold">À¯·¡</h2>
+              <p class="col-md-8 fs-4">Ä¬Å×ÀÏ À¯·¡</p>
             </div>
           </div>
 </main>

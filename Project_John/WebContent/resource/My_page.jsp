@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,20 +8,25 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>TODAY COCKTAIL</title>
+    <title>MYPAGE</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
 
     <style>
-      div.b{
-        margin-bottom: 148px;
+      div.t_box{
+        position: sticky;
+      }
+      div#al{
+          margin: auto;
       }
     </style>
   </head>
   <body>
+    
+    <body class="bg-light">
     <br>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Cocktail</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,42 +56,50 @@
             </form>
             </div>
         </div>
-    </nav>
+        </nav>
 
 
     <main>
-        <div class="container py-4">
-            
-
-            <div class="row align-items-md-stretch" style="margin-top: 148px;">
-              <div class="col-md-6">
-                  <div style="margin-top: 20px;">
-                <div class="card-header"></div>
-                    <div class="card-body">
-                        <img src="./img/c_img1.png">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">����������</h1>
+                    <br>
+                    <p>
+                        <div id="al" class="card border-info mb-3" style="max-width: 20rem;">
+                            <div class="card-header">�ַ�</div>
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                        </div>
                     </div>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./img/c_img1.png">
+
+                <div class="card-body">
+                  <p class="card-text">Ĭ�����̸�</p>
+                  <p class="card-text">"���ٹ���"</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6 card border-info mb-3">
-                <div style="margin-top: 20px;">
-                <div class="card-header"><h2>오늘의 칵테일</h2></div>
-                <br>
-                <br>
-                    <div class="card-body">
-                        <h4 class="card-title">칵테일 이름</h4>
-                        <p class="card-text">마가리타</p>
-                        <br>
-                        <h4 class="card-title">한줄 문구</h4>
-                        <p class="card-text">문구다 이자시가</p>
-                        <br>
-                        <p class="card-text">이 칵테일에 대한 더 많은 정보를 원한다면</p>
-                        <button class="btn btn-primary btn-lg" type="button">칵테일 정보 더보기</button>
-                    </div>
-                </div>
             </div>
-            <div class="b">
+            
+          </div>
+        </div>
+      </div>
 
-            </div>
     </main>
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

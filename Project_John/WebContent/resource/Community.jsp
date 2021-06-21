@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,7 +57,7 @@
     <br>
     <br>
     <br>
-    <h1>ÏÇ¨Ïö©Ïûê Î¶¨Î∑∞ Î≥¥Í∏∞</h1>
+    <h1>ªÁøÎ¿⁄ ∏Æ∫‰ ∫∏±‚</h1>
     
     <br>
 
@@ -67,17 +69,17 @@
                 <table>
                     <tr>
                         <td width="20%"><span id="board_num">1</span></td>
-                        <td >ÎàÑÍµ¨ÎãòÏùò Î¶¨Î∑∞</td>
+                        <td >¥©±∏¥‘¿« ∏Æ∫‰</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Ïù¥ÎØ∏ÏßÄ</td>
+                        <td colspan="2" >¿ÃπÃ¡ˆ</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Î¶¨Î∑∞ÎÇ¥Ïö©</td>
+                        <td colspan="2" >∏Æ∫‰≥ªøÎ</td>
                     </tr>
                     <tr>
                         <td width="250" align="right">
-                            <input class="btn btn-light" id="like_btn" type="button" value="Ï¢ãÏïÑÏöî" onclick="like()">
+                            <input class="btn btn-light" id="like_btn" type="button" value="¡¡æ∆ø‰" onclick="like()">
                         </td>
                         <td align="left">
                             <span id="like_result"></span>
@@ -86,8 +88,8 @@
                     <tr>
                         <td colspan="2">
                         <form class="d-flex">
-                            <input class="form-control me-sm-2" type="text" placeholder="ÎåìÍ∏ÄÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî">
-                            <input class="btn btn-light" id="write_com" type="button" value="ÎåìÍ∏ÄÏûëÏÑ±">
+                            <input class="form-control me-sm-2" type="text" placeholder="¥Ò±€¿ª ¿‘∑¬«œººø‰">
+                            <input class="btn btn-light" id="write_com" type="button" value="¥Ò±€¿€º∫">
                             </form>
                         </td>
                     </tr>
@@ -111,17 +113,17 @@
                 <table>
                     <tr>
                         <td width="20%"><span id="board_num">1</span></td>
-                        <td >ÎàÑÍµ¨ÎãòÏùò Î¶¨Î∑∞</td>
+                        <td >¥©±∏¥‘¿« ∏Æ∫‰</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Ïù¥ÎØ∏ÏßÄ</td>
+                        <td colspan="2" >¿ÃπÃ¡ˆ</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Î¶¨Î∑∞ÎÇ¥Ïö©</td>
+                        <td colspan="2" >∏Æ∫‰≥ªøÎ</td>
                     </tr>
                     <tr>
                         <td width="250" align="right">
-                            <input class="btn btn-light" id="like_btn" type="button" value="Ï¢ãÏïÑÏöî" onclick="like()">
+                            <input class="btn btn-light" id="like_btn" type="button" value="¡¡æ∆ø‰" onclick="like()">
                         </td>
                         <td align="left">
                             <span id="like_result"></span>
@@ -130,8 +132,8 @@
                     <tr>
                         <td colspan="2">
                         <form class="d-flex">
-                            <input class="form-control me-sm-2" type="text" placeholder="ÎåìÍ∏ÄÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî">
-                            <input class="btn btn-light" id="write_com" type="button" value="ÎåìÍ∏ÄÏûëÏÑ±">
+                            <input class="form-control me-sm-2" type="text" placeholder="¥Ò±€¿ª ¿‘∑¬«œººø‰">
+                            <input class="btn btn-light" id="write_com" type="button" value="¥Ò±€¿€º∫">
                             </form>
                         </td>
                     </tr>
@@ -155,17 +157,17 @@
                 <table>
                     <tr>
                         <td width="20%"><span id="board_num">1</span></td>
-                        <td >ÎàÑÍµ¨ÎãòÏùò Î¶¨Î∑∞</td>
+                        <td >¥©±∏¥‘¿« ∏Æ∫‰</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Ïù¥ÎØ∏ÏßÄ</td>
+                        <td colspan="2" >¿ÃπÃ¡ˆ</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Î¶¨Î∑∞ÎÇ¥Ïö©</td>
+                        <td colspan="2" >∏Æ∫‰≥ªøÎ</td>
                     </tr>
                     <tr>
                         <td width="250" align="right">
-                            <input class="btn btn-light" id="like_btn" type="button" value="Ï¢ãÏïÑÏöî" onclick="like()">
+                            <input class="btn btn-light" id="like_btn" type="button" value="¡¡æ∆ø‰" onclick="like()">
                         </td>
                         <td align="left">
                             <span id="like_result"></span>
@@ -174,8 +176,8 @@
                     <tr>
                         <td colspan="2">
                         <form class="d-flex">
-                            <input class="form-control me-sm-2" type="text" placeholder="ÎåìÍ∏ÄÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî">
-                            <input class="btn btn-light" id="write_com" type="button" value="ÎåìÍ∏ÄÏûëÏÑ±">
+                            <input class="form-control me-sm-2" type="text" placeholder="¥Ò±€¿ª ¿‘∑¬«œººø‰">
+                            <input class="btn btn-light" id="write_com" type="button" value="¥Ò±€¿€º∫">
                             </form>
                         </td>
                     </tr>
@@ -199,17 +201,17 @@
                 <table>
                     <tr>
                         <td width="20%"><span id="board_num">1</span></td>
-                        <td >ÎàÑÍµ¨ÎãòÏùò Î¶¨Î∑∞</td>
+                        <td >¥©±∏¥‘¿« ∏Æ∫‰</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Ïù¥ÎØ∏ÏßÄ</td>
+                        <td colspan="2" >¿ÃπÃ¡ˆ</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >Î¶¨Î∑∞ÎÇ¥Ïö©</td>
+                        <td colspan="2" >∏Æ∫‰≥ªøÎ</td>
                     </tr>
                     <tr>
                         <td width="250" align="right">
-                            <input class="btn btn-light" id="like_btn" type="button" value="Ï¢ãÏïÑÏöî" onclick="like()">
+                            <input class="btn btn-light" id="like_btn" type="button" value="¡¡æ∆ø‰" onclick="like()">
                         </td>
                         <td align="left">
                             <span id="like_result"></span>
@@ -218,8 +220,8 @@
                     <tr>
                         <td colspan="2">
                         <form class="d-flex">
-                            <input class="form-control me-sm-2" type="text" placeholder="ÎåìÍ∏ÄÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî">
-                            <input class="btn btn-light" id="write_com" type="button" value="ÎåìÍ∏ÄÏûëÏÑ±">
+                            <input class="form-control me-sm-2" type="text" placeholder="¥Ò±€¿ª ¿‘∑¬«œººø‰">
+                            <input class="btn btn-light" id="write_com" type="button" value="¥Ò±€¿€º∫">
                             </form>
                         </td>
                     </tr>
@@ -243,7 +245,7 @@
     var num = 1;
     $('#write_com').on('click', function(){
         var com = $('input[type=text]').val();
-        $('#comments').append('<li class="com'+num+'">'+com+'<input type="button" value="ÎåìÍ∏ÄÏÇ≠Ï†ú" onclick="del('+num+')"></li>');
+        $('#comments').append('<li class="com'+num+'">'+com+'<input type="button" value="¥Ò±€ªË¡¶" onclick="del('+num+')"></li>');
         num++;
         $('input[type=text]').val('');
     });
@@ -253,7 +255,7 @@
     }
     
     function like(){
-        if($('#like_btn').val()=="Ï¢ãÏïÑÏöî"){
+        if($('#like_btn').val()=="¡¡æ∆ø‰"){
             $.ajax({
                 type : "post",
                 data : {
@@ -264,10 +266,10 @@
                 success : function(data){
                 
                 $('#like_result').html(data);
-                $('#like_btn').val('Ï¢ãÏïÑÏöî Ï∑®ÏÜå');
+                $('#like_btn').val('¡¡æ∆ø‰ √Îº“');
                 },
                 error : function(){
-                alert('Ïã§Ìå®!');
+                alert('Ω«∆–!');
                 }
             });
         }else{
@@ -282,10 +284,10 @@
                 success : function(data){
                 
                 $('#like_result').html(data);
-                $('#like_btn').val('Ï¢ãÏïÑÏöî');
+                $('#like_btn').val('¡¡æ∆ø‰');
                 },
                 error : function(){
-                alert('Ïã§Ìå®!');
+                alert('Ω«∆–!');
                 }
             });
         }

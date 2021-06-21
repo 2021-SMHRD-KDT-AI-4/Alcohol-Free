@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,28 +60,28 @@
 
       
       <div id="cock" class="form-group">
-          <h1>ë¦¬ë·° ìž‘ì„±</h1>
+          <h1>¸®ºä ÀÛ¼º</h1>
           <br>
           <br>
-          <p class="lead" style="text-align: center;">ì¶”ì²œ ë°›ì€ ì¹µí…Œì¼ì€ ì–´ë– ì…¨ë‚˜ìš”?</p>
-          <p class="lead">ë¦¬ë·° ì œëª©</p>
+          <p class="lead" style="text-align: center;">ÃßÃµ ¹ÞÀº Ä¬Å×ÀÏÀº ¾î¶°¼Ì³ª¿ä?</p>
+          <p class="lead">¸®ºä Á¦¸ñ</p>
           <input type="text" class="form-control" id="floatingInput">
           <br>
-          <p class="lead">ì‚¬ì§„ ì—…ë¡œë“œ</p>
+          <p class="lead">»çÁø ¾÷·Îµå</p>
           <div class="filebox"> 
-          <input class="upload-name" value="íŒŒì¼ì„ íƒ" disabled="disabled"> 
+          <input class="upload-name" value="ÆÄÀÏ¼±ÅÃ" disabled="disabled"> 
           <label class="btn btn-light" className="input-file-button" for="input-file">
-              ì‚¬ì§„ ì²¨ë¶€
+              »çÁø Ã·ºÎ
           </label>
           <input type="file" class="upload-name" name="file" id="input-file" style="display: none;" accept="image/*">
           </div>
           <br>
           <br>
-          <p class="lead">ë¦¬ë·° ìž‘ì„±
+          <p class="lead">¸®ºä ÀÛ¼º
           <textarea class="form-control" id="floatingInput" ></textarea>
           <div id="test_cnt">(0 / 200)</div>
           <br>
-          <input type="submit" class="btn btn-light" value="ë¦¬ë·°ìž‘ì„±" style="width: 500px;">
+          <input type="submit" class="btn btn-light" value="¸®ºäÀÛ¼º" style="width: 500px;">
           </p>
       </div>
 

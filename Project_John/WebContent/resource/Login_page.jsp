@@ -1,26 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>MAIN</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
         <style>
-            
-            div.left {
-                width: 50%;
-                float: left;
 
+            h1{
+                text-align: center;
             }
-            div.right {
-                margin-top: 250px;
-                margin-bottom: 258px;
-                width: 50%;
-                float: right;
+            div.form-group{
+                padding-top: 250px;
+                width: 500px;
+                margin: auto;
+                padding-bottom: 250px;
             }
-            div.container-fluid {
-                height: 50px;
-            }
-            
         </style>
     </head>
     <body>
@@ -54,28 +50,30 @@
                   <input class="form-control me-sm-2" type="text" placeholder="Search">
                   <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
-              </div>
+                </div>
             </div>
-          </nav>
+        </nav>
 
-          <div>
-            <div class="left">
-                <img id="Main_img" src="ex01.png">
-            </div>
-            <div class="right">
-                <h2>ì¹µí…Œì¼ ì¶”ì²œ ë°›ì„ë˜???</h2>
-                <br>
-                <p>ë„ˆëŠ” ì§€ê¸ˆ ìˆ ì´ ì¤€ë‚´ ë§ˆì‹œê³ ì‹¶ë‹¤</p>
-                <p>ê³ ë¡œ ë‹¹ì¥ ë§ˆì…”ì•¼ í•œë‹¤</p>
-                <p>ê·¸ëŸ¬ë‹ˆ ìš°ë¦¬ëŠ” ì¶”ì²œí•´ì¤€ë‹¤</p>
+        <div class="form-group">
+            <h1>·Î±×ÀÎ</h1>
                 <br>
                 <br>
-                <button class="btn btn-lg btn-primary" type="button">ì¶”ì²œë°›ì</button>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Id">
+                <label for="floatingInput">¾ÆÀÌµğ</label>
             </div>
-          </div>
-
-
-
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">ºñ¹Ğ¹øÈ£</label>
+            </div>
+            <div class="d-grid gap-2">
+                <br>
+                <button class="btn btn-lg btn-primary" type="button">·Î±×ÀÎ</button>
+            </div>
+            <div>
+                ¾ÆÁ÷ È¸¿øÀÌ ¾Æ´Ï½Å°¡¿ä? <a href="Join_page">È¸¿ø°¡ÀÔ</a>
+            </div>
+        </div>
 
           <script src="js/bootstrap.js"></script>
     </body>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -54,14 +56,14 @@
         </nav>
   
         <div id="cock" class="form-group">
-            <h1>칵테일 추천</h1>
+            <h1>Ĭ���� ��õ</h1>
             <br>
             <br>
-            <p class="lead" style="text-align: center;">당신의 오늘 하루를 적어주세요.</p>
+            <p class="lead" style="text-align: center;">����� ���� �Ϸ縦 �����ּ���.</p>
             <p class="lead">
             <input type="text" class="form-control" id="floatingInput">
             <br>
-            <input type="submit" class="btn btn-outline-light" value="칵테일 추천 받기" style="width: 500px;">
+            <input type="submit" class="btn btn-outline-light" value="Ĭ���� ��õ �ޱ�" style="width: 500px;">
             </p>
         </div>
 

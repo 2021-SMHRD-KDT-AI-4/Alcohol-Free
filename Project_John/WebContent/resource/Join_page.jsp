@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -56,68 +58,68 @@
   <main>
     <div class="py-5 text-center">
       
-      <h2>М ▄Л⌡░Й╟─Л·┘</h2>
-      <p class="lead">М ▄Л⌡░Й╟─Л·┘Л≈░ М∙└Л ■М∙° Л═∙КЁ╢К╔╪ Л·▒Л└╠М∙╢Лё╪Л└╦Л ■.</p>
+      <h2>х╦©Ь╟║ют</h2>
+      <p class="lead">х╦©Ь╟║ют©║ гй©Дгя а╓╨╦╦╕ юш╪╨гьаж╪╪©Д.</p>
     </div>
 
     <div id="join_form" class="col-md-7 col-lg-8">
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-12">
-              <label for="ID" class="form-label">Л∙└Л²╢К■■</label>
-              <input type="text" class="form-control" placeholder="Л∙└Л²╢К■■К╔╪ Л·┘К═╔М∙≤Л└╦Л ■." id="ID" _mstplaceholder="21193315" style="margin-bottom: 10px;">
-              <input id="ID_btn" type="button" class="btn btn-light" value="IDЛ╓▒КЁ╣ Л╡╢М│╛">
+              <label for="ID" class="form-label">╬фюл╣П</label>
+              <input type="text" class="form-control" placeholder="╬фюл╣П╦╕ ют╥бго╪╪©Д." id="ID" _mstplaceholder="21193315" style="margin-bottom: 10px;">
+              <input id="ID_btn" type="button" class="btn btn-light" value="IDаъ╨╧ ц╪е╘">
             </div>
 
             <div class="col-12">
-              <label for="PW" class="form-label">К╧└К╟─К╡┬М≤╦</label>
+              <label for="PW" class="form-label">╨Я╧п╧Ьхё</label>
               <div class="input-group has-validation">
-                <input type="password" class="form-control" placeholder="К╧└К╟─К╡┬М≤╦К╔╪ Л·┘К═╔М∙≤Л└╦Л ■." id="PW" _mstplaceholder="21193315">
+                <input type="password" class="form-control" placeholder="╨Я╧п╧Ьхё╦╕ ют╥бго╪╪©Д." id="PW" _mstplaceholder="21193315">
               </div>
             </div>
 
             <div class="col-12">
-              <label for="name" class="form-label">Л²╢К╕└</label>
-              <input type="text" class="form-control" placeholder="Л²╢К╕└Л²└ Л·┘К═╔М∙≤Л└╦Л ■." id="NAME" _mstplaceholder="21193315">
+              <label for="name" class="form-label">юл╦╖</label>
+              <input type="text" class="form-control" placeholder="юл╦╖ю╩ ют╥бго╪╪©Д." id="NAME" _mstplaceholder="21193315">
             </div>
 
             <div class="col-12">
-                <label for="genader" class="form-label">Л└╠КЁ└</label>
+                <label for="genader" class="form-label">╪╨╨╟</label>
                 <select class="form-select" id="GENDER" required>
-                  <option value=""Choose>Л≈╛Л·░</option>
-                  <option>К┌╗Л·░</option>
+                  <option value=""Choose>©╘юз</option>
+                  <option>Ё╡юз</option>
                 </select>
               </div>
 
             <div class="col-12">
-              <label for="age" class="form-label">К┌≤Л²╢</label>
-              <input type="text" class="form-control" placeholder="К┌≤Л²╢К╔╪ Л·┘К═╔М∙≤Л└╦Л ■." id="AGE" _mstplaceholder="21193315">
+              <label for="age" class="form-label">Ё╙юл</label>
+              <input type="text" class="form-control" placeholder="Ё╙юл╦╕ ют╥бго╪╪©Д." id="AGE" _mstplaceholder="21193315">
             </div>
 
             <div class="col-md-6">
-              <label for="alcohol_type" class="form-label">Л└═М≤╦М∙≤К┼■ Лё╪Л╒┘</label>
-              <input type="text" class="form-control" placeholder="Л└═М≤╦М∙≤К┼■ Лё╪Л╒┘Л²└ Л·┘К═╔М∙≤Л└╦Л ■." id="ALCOHOL_TYPE" _mstplaceholder="21193315">
+              <label for="alcohol_type" class="form-label">╪╠хёго╢б ажа╬</label>
+              <input type="text" class="form-control" placeholder="╪╠хёго╢б ажа╬ю╩ ют╥бго╪╪©Д." id="ALCOHOL_TYPE" _mstplaceholder="21193315">
             </div>
 
             <div class="col-md-6">
-              <label for="alcohol_capacity" class="form-label">Лё╪К÷┴</label>
-              <input type="text" class="form-control" placeholder="Лё╪К÷┴Л²└ Л═│Л√╢Лё╪Л└╦Л ■." id="ALCOHOL_CAPACITY" _mstplaceholder="21193315">
+              <label for="alcohol_capacity" class="form-label">аж╥╝</label>
+              <input type="text" class="form-control" placeholder="аж╥╝ю╩ юШ╬Наж╪╪©Д." id="ALCOHOL_CAPACITY" _mstplaceholder="21193315">
             </div>
 
             <div class="col-12">
-                <label for="flavor" class="form-label">Л└═М≤╦М∙≤К┼■ К╖⌡</label>
+                <label for="flavor" class="form-label">╪╠хёго╢б ╦ю</label>
                 <select class="form-select" id="FLAVOR" required>
-                  <option value=""Choose>К▀╗К╖⌡</option>
-                  <option>К▐┘М∙°К╖⌡</option>
-                  <option>Л┐│Л╬▄М∙°К╖⌡</option>
-                  <option>Л▀═К╖⌡</option>
-                  <option>Л⌠╢К╖⌡</option>
+                  <option value=""Choose>╢э╦ю</option>
+                  <option>╣╤гя╦ю</option>
+                  <option>╩СдХгя╦ю</option>
+                  <option>╫е╦ю</option>
+                  <option>╬╢╦ю</option>
                 </select>
               </div>
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">М ▄Л⌡░ Й╟─Л·┘ М∙≤Й╦╟</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">х╦©Ь ╟║ют го╠Б</button>
         </form>
       </div>
     </div>
