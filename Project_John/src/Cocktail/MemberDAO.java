@@ -126,6 +126,7 @@ public class MemberDAO {
 			psmt.setInt(2, dto.getAlcohol_capacity());
 			psmt.setString(3, dto.getAlcohol_type());
 			psmt.setString(4, dto.getFlavor());
+			psmt.setNString(5, dto.getId());
 			cnt = psmt.executeUpdate();
 			
 		} catch (SQLException e) {
