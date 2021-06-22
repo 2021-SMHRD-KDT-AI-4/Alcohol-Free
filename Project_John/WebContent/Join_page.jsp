@@ -46,9 +46,9 @@
                 <a class="nav-link" href="My_page.jsp">Mypage</a>
               </li>
             </ul>
-            <form class="d-flex" action="Serch_Service" method="post">>
-              <input class="form-control me-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            <form class="d-flex" action="Search_Content.jsp" method="post">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
             </form>
           </div>
         </div>
@@ -102,7 +102,7 @@
             </div>
 
             <div class="col-md-6">
-              <label for="alcohol_capacity" class="form-label">주량</label>
+              <label for="alcohol_capacity" class="form-label">주량(소주 기준 병 수 입력)</label>
               <input type="text" class="form-control" placeholder="주량을 적어주세요." name="ALCOHOL_CAPACITY" id="ALCOHOL_CAPACITY">
             </div>
 

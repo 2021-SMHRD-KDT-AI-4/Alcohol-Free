@@ -54,10 +54,10 @@
         <h1>검색 결과</h1>
         <p class="lead">
             <br>
-            <form class="d-flex" >
-            <input class="form-control me-sm-2" type="text" placeholder="Search" style="width: 5000px;">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+            <form class="d-flex" action="Search_Content.jsp" method="post">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
+            </form>
         </p>
     </div>
 

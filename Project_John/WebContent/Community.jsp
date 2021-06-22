@@ -45,9 +45,9 @@
                 <a class="nav-link" href="My_page.jsp">Mypage</a>
               </li>
             </ul>
-            <form class="d-flex" action="Serch_Service" method="post">>
-              <input class="form-control me-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            <form class="d-flex" action="Search_Content.jsp" method="post">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
             </form>
             </div>
         </div>

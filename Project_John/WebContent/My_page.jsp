@@ -55,7 +55,7 @@
             </ul>
             <form class="d-flex" action="Serch_Service" method="post">
                 <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
             </form>
             </div>
         </div>
@@ -72,7 +72,7 @@
                         <div id="al" class="card border-info mb-3" style="max-width: 20rem;">
                             <div class="card-header">주량</div>
                             <div class="card-body">
-                                <p class="card-text"></p>
+                                <p class="card-text">병</p>
                         	</div>
                     	</div>
                     </p>
@@ -85,14 +85,16 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
               <div class="card shadow-sm">
-                <img src="./img/c_img1.png">
+                <img src="./C_IMG/margarita.png">
 
                 <div class="card-body">
                   <p class="card-text">칵테일이름</p>
-                  <p class="card-text">"한줄문구"</p>
+                  <p class="card-text">"내가 남긴 한줄문구"</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <form action="Recommend_Result_page.jsp">
+                      <input type="submit" class="btn btn-sm btn-outline-secondary" value="더보기">
+                    </form>
                     </div>
                   </div>
                 </div>

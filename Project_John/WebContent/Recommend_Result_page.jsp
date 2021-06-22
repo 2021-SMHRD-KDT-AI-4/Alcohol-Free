@@ -45,9 +45,9 @@
                 <a class="nav-link" href="My_page.jsp">Mypage</a>
                 </li>
             </ul>
-            <form class="d-flex" action="Serch_Service" method="post">>
+            <form class="d-flex" action="Search_Content.jsp" method="post">
                 <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
             </form>
             </div>
         </div>
@@ -63,7 +63,7 @@
                   <div style="margin-top: 20px;">
                 <div class="card-header"></div>
                     <div class="card-body">
-                        <img src="./img/c_img1.png">
+                        <img src="./C_IMG/margarita.png">
                     </div>
                 </div>
               </div>
@@ -72,6 +72,7 @@
                 <div class="card-header"><h2>오늘의 칵테일</h2></div>
                 <br>
                 <br>
+                <form action="Cocktail_info.jsp">
                     <div class="card-body">
                         <h4 class="card-title">칵테일 이름</h4>
                         <p class="card-text">마가리타</p>
@@ -80,13 +81,16 @@
                         <p class="card-text">문구다 이자시가</p>
                         <br>
                         <p class="card-text">이 칵테일에 대한 더 많은 정보를 원한다면</p>
-                        <button class="btn btn-primary btn-lg" type="button">칵테일 정보 더보기</button>
+                        <input class="btn btn-primary btn-lg" type="submit" value="칵테일 정보 더보기">
                     </div>
+                 </form>
                 </div>
+            </div>
             </div>
             <div class="b">
 
             </div>
+          </div>
     </main>
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
