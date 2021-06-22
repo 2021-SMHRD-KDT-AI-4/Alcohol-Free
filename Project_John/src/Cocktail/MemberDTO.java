@@ -29,6 +29,13 @@ public class MemberDTO {
 		this.pw = pw;
 	}
 
+	public MemberDTO(String pw, String alcohol_type, int alcohol_capacity, String flavor) {
+		this.pw = pw;
+		this.alcohol_type = alcohol_type;
+		this.alcohol_capacity = alcohol_capacity;
+		this.flavor = flavor;
+	}
+
 	public String getId() {
 		return id;
 	}

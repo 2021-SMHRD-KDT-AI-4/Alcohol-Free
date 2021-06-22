@@ -43,7 +43,7 @@
                     <a class="nav-link" href="Login_Service">Login</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Mypage.jsp">Mypage</a>
+                    <a class="nav-link" href="My_page.jsp">Mypage</a>
                   </li>
                 </ul>
                 <form class="d-flex" action="Serch_Service" method="post">>
