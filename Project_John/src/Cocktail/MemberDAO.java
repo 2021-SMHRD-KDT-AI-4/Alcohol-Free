@@ -53,15 +53,15 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "INSERT INTO W_USER VALUES(?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO W_USER2 VALUES(?,?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
 			psmt.setString(3, dto.getName());
 			psmt.setString(4, dto.getGender());
 			psmt.setInt(5, dto.getAge());
-			psmt.setInt(6, dto.getAlcohol_capacity());
-			psmt.setString(7, dto.getAlcohol_type());
+			psmt.setString(6, dto.getAlcohol_type());
+			psmt.setInt(7, dto.getAlcohol_capacity());
 			psmt.setString(8, dto.getFlavor());
 			
 			cnt = psmt.executeUpdate();
@@ -87,23 +87,23 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "SELECT * FROM W_USER WHERE ID = ? AND PW = ?";
+			String sql = "SELECT * FROM W_USER2 WHERE user_ID = ? AND user_PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
 			rs = psmt.executeQuery();	
 		
 			if(rs.next()){
-				String id = rs.getString(1);
-				String pw = rs.getString(2);
-				String name = rs.getString(3);
-				String gender = rs.getString(4);
-				int age = rs.getInt(5);
-				int alcohol_capacity = rs.getInt(6);
-				String alcohol_type = rs.getString(7);
-				String flavor = rs.getString(8);
+				String uid = rs.getString(1);
+				String upw = rs.getString(2);
+				String uname = rs.getString(3);
+				String ugender = rs.getString(4);
+				int uage = rs.getInt(5);
+				String ualcohol_type = rs.getString(6);
+				int ualcohol_capacity = rs.getInt(7);
+				String uflavor = rs.getString(8);
 												
-				info = new MemberDTO(id, pw, name, gender, age, alcohol_capacity, alcohol_type, flavor);
+				info = new MemberDTO(uid, upw, uname, ugender, uage, ualcohol_type, ualcohol_capacity, uflavor);
 						
 				}
 			}catch (SQLException e) {
@@ -121,11 +121,11 @@ public class MemberDAO {
 		try {
 			getConnection();
 		
-			String sql = "UPDATE W_USER SET User_PW = ?, Alcohol_capacity = ?, Alcohol_type = ?, FLAVOR = ? WHERE User_ID = ? AND USER_PW";
+			String sql = "UPDATE W_USER2 SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ? FLAVOR = ? WHERE User_ID = ? AND USER_PW";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
-			psmt.setInt(2, dto.getAlcohol_capacity());
-			psmt.setString(3, dto.getAlcohol_type());
+			psmt.setString(2, dto.getAlcohol_type());
+			psmt.setInt(3, dto.getAlcohol_capacity());
 			psmt.setString(4, dto.getFlavor());
 			psmt.setNString(5, dto.getId());
 			psmt.setNString(6, dto.getPw());
@@ -148,7 +148,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "SELECT * FROM W_USER WHERE ID = ?";
+			String sql = "SELECT * FROM W_USER2 WHERE ID = ?";
 			
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);

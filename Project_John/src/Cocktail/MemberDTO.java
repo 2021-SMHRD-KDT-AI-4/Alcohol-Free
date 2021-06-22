@@ -6,21 +6,27 @@ public class MemberDTO {
 	private String name;
 	private String gender;
 	private int age;
-	private int alcohol_capacity;
 	private String alcohol_type;
+	private int alcohol_capacity;
 	private String flavor;
 	
-	public MemberDTO(String id, String pw, String name, String gender, int age, int alcohol_capacity,
-			String alcohol_type, String flavor) {
+	public MemberDTO(String id, String pw, String name, String gender, int age, String alcohol_type, int alcohol_capacity,
+			 String flavor) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.gender = gender;
 		this.age = age;
-		this.alcohol_capacity = alcohol_capacity;
 		this.alcohol_type = alcohol_type;
+		this.alcohol_capacity = alcohol_capacity;
 		this.flavor = flavor;
+	}
+
+	public MemberDTO(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
 	}
 
 	public String getId() {
@@ -86,5 +92,7 @@ public class MemberDTO {
 	public void setFlavor(String flavor) {
 		this.flavor = flavor;
 	}
+	
+	
 
 }
