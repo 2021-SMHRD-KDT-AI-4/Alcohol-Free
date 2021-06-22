@@ -68,7 +68,7 @@
                 <div class="col p-4 d-flex flex-column position-static">
                 <table>
                     <tr>
-                        <td width="20%"><span id="board_num">1</span></td>
+                        <td width="20%"></td>
                         <td >누구님의 리뷰</td>
                     </tr>
                     <tr >
@@ -79,6 +79,7 @@
                     </tr>
                     <tr>
                         <td width="250" align="right">
+                        	<span id="board_num">1</span>
                             <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
                         </td>
                         <td align="left">
@@ -112,7 +113,7 @@
                 <div class="col p-4 d-flex flex-column position-static">
                 <table>
                     <tr>
-                        <td width="20%"><span id="board_num">1</span></td>
+                        <td width="20%"></td>
                         <td >누구님의 리뷰</td>
                     </tr>
                     <tr >
@@ -123,6 +124,7 @@
                     </tr>
                     <tr>
                         <td width="250" align="right">
+                        	<span id="board_num">1</span>
                             <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
                         </td>
                         <td align="left">
@@ -156,7 +158,7 @@
                 <div class="col p-4 d-flex flex-column position-static">
                 <table>
                     <tr>
-                        <td width="20%"><span id="board_num">1</span></td>
+                        <td width="20%"></td>
                         <td >누구님의 리뷰</td>
                     </tr>
                     <tr >
@@ -167,6 +169,7 @@
                     </tr>
                     <tr>
                         <td width="250" align="right">
+                        	<span id="board_num">1</span>
                             <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
                         </td>
                         <td align="left">
@@ -200,7 +203,7 @@
                 <div class="col p-4 d-flex flex-column position-static">
                 <table>
                     <tr>
-                        <td width="20%"><span id="board_num">1</span></td>
+                        <td width="20%"></td>
                         <td >누구님의 리뷰</td>
                     </tr>
                     <tr >
@@ -211,6 +214,7 @@
                     </tr>
                     <tr>
                         <td width="250" align="right">
+                        	<span id="board_num">1</span>
                             <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
                         </td>
                         <td align="left">
@@ -239,59 +243,58 @@
     </div>
     
 
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script>
 
-    var num = 1;
-    $('#write_com').on('click', function(){
-        var com = $('input[type=text]').val();
-        $('#comments').append('<li class="com'+num+'">'+com+'<input type="button" value="댓글삭제" onclick="del('+num+')"></li>');
-        num++;
-        $('input[type=text]').val('');
-    });
-    
-    function del(num){
-        $('.com'+num).remove();
-    }
-    
-    function like(){
-        if($('#like_btn').val()=="좋아요"){
-            $.ajax({
-                type : "post",
-                data : {
-                "board_num" : $('#board_num').html()
-                },
-                url : "likeService",
-                dataType : "text",
-                success : function(data){
-                
-                $('#like_result').html(data);
-                $('#like_btn').val('좋아요 취소');
-                },
-                error : function(){
-                alert('실패!');
-                }
-            });
-        }else{
-
-            $.ajax({
-                type : "post",
-                data : {
-                "board_num" : $('#board_num').html()
-                },
-                url : "dislikeService",
-                dataType : "text",
-                success : function(data){
-                
-                $('#like_result').html(data);
-                $('#like_btn').val('좋아요');
-                },
-                error : function(){
-                alert('실패!');
-                }
-            });
-        }
-    }
+   var num = 1;
+   $('#write_com').on('click', function(){
+      var com = $('input[type=text]').val();
+      $('#comments').append('<li class="com'+num+'">'+com+'<input type="button" value="댓글삭제" onclick="del('+num+')"></li>');
+      num++;
+      $('input[type=text]').val('');
+   });
+   
+   function del(num){
+      $('.com'+num).remove();
+   }
+   
+   function like(){
+      if($('#like_btn').val()=="좋아요"){
+         $.ajax({
+            type : "post",
+            data : {
+               "board_num" : $('#board_num').html()
+            },
+            url : "likeService",
+            dataType : "text",
+            success : function(data){
+               
+               $('#like_result').html(data);
+               $('#like_btn').val('좋아요 취소');
+            },
+            error : function(){
+               alert('실패!');
+            }
+         });
+      }else{
+         $.ajax({
+            type : "post",
+            data : {
+               "board_num" : $('#board_num').html()
+            },
+            url : "dislikeService",
+            dataType : "text",
+            success : function(data){
+               
+               $('#like_result').html(data);
+               $('#like_btn').val('좋아요');
+            },
+            error : function(){
+               alert('실패!');
+            }
+         });
+      }
+   }
 </script>
 
 </body>

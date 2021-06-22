@@ -73,8 +73,8 @@
                             <div class="card-header">¡÷∑Æ</div>
                             <div class="card-body">
                                 <p class="card-text"></p>
-                        </div>
-                    </div>
+                        	</div>
+                    	</div>
                     </p>
                 </div>
             </div>
@@ -97,12 +97,9 @@
                   </div>
                 </div>
               </div>
-            </div>
-            
+            </div> 
           </div>
         </div>
-      </div>
-
     </main>
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

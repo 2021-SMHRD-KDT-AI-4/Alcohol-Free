@@ -70,10 +70,10 @@
           <p class="lead">사진 업로드</p>
           <div class="filebox"> 
           <input class="upload-name" value="파일선택" disabled="disabled"> 
-          <label class="btn btn-light" className="input-file-button" for="input-file">
+          <label class="btn btn-light" for="input-file">
               사진 첨부
           </label>
-          <input type="file" class="upload-name" name="file" id="input-file" style="display: none;" accept="image/*">
+          <input type="file" class="upload-name" name="file" name="input-file" id="input-file" style="display: none;" accept="image/*">
           </div>
           <br>
           <br>
@@ -82,9 +82,10 @@
           <div id="test_cnt">(0 / 200)</div>
           <br>
           <input type="submit" class="btn btn-light" value="리뷰작성" style="width: 500px;">
-          </p>
+
       </div>
 
+		<script src="./js/jquery-3.6.0.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script>
 

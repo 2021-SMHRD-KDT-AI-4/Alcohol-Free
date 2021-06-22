@@ -56,15 +56,17 @@
         </nav>
   
         <div id="cock" class="form-group">
+        <form action="Recommend_Result_page.jsp">
             <h1>칵테일 추천</h1>
             <br>
             <br>
             <p class="lead" style="text-align: center;">당신의 오늘 하루를 적어주세요.</p>
             <p class="lead">
-            <input type="text" class="form-control" id="floatingInput">
+            <input type="text" class="form-control" name="floatingInput" id="floatingInput">
             <br>
             <input type="submit" class="btn btn-outline-light" value="칵테일 추천 받기" style="width: 500px;">
             </p>
+        </form>
         </div>
 
           <script src="js/bootstrap.js"></script>

@@ -64,6 +64,7 @@
             <div class="left">
                 <img id="Main_img" src="ex01.png">
             </div>
+            <form action="InputPage.jsp">
             <div class="right">
                 <h2>칵테일 추천 받을래???</h2>
                 <br>
@@ -72,8 +73,9 @@
                 <p>그러니 우리는 추천해준다</p>
                 <br>
                 <br>
-                <button class="btn btn-lg btn-primary" type="button">추천받자</button>
+                <input class="btn btn-lg btn-primary" type="submit" value="추천 받으러 가기">
             </div>
+            </form>
           </div>
 
 
