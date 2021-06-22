@@ -121,7 +121,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 		
-			String sql = "UPDATE W_USER2 SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ? FLAVOR = ? WHERE User_ID = ? AND USER_PW";
+			String sql = "UPDATE W_USER2 SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ? FLAVOR = ? WHERE User_ID = ? AND USER_PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
 			psmt.setString(2, dto.getAlcohol_type());
@@ -142,16 +142,16 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public boolean idCheck(String id) {
+	public boolean idCheck(String ID) {
 		boolean check = false;
 		
 		try {
 			getConnection();
 			
-			String sql = "SELECT * FROM W_USER2 WHERE ID = ?";
+			String sql = "SELECT * FROM W_USER2 WHERE User_ID = ?";
 			
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
+			psmt.setString(1, ID);
 			
 			rs = psmt.executeQuery();	
 		
@@ -167,6 +167,8 @@ public class MemberDAO {
 		    }
 			return check;	
 	}
+	
+	
 	
 	
 }

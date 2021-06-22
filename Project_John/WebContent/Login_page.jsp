@@ -12,10 +12,10 @@
                 text-align: center;
             }
             div.form-group{
-                padding-top: 250px;
-                width: 500px;
+                padding-top: 14.5%;
+                width: 30%;
                 margin: auto;
-                padding-bottom: 250px;
+                padding-bottom: 14.5%;
             }
         </style>
     </head>

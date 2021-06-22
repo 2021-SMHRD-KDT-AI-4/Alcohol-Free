@@ -68,7 +68,8 @@
             <div class="col-12">
               <label for="ID" class="form-label">아이디</label>
               <input type="text" class="form-control" placeholder="아이디를 입력하세요." name="ID" id="ID" style="margin-bottom: 10px;">
-              <input id="ID_btn" type="button" class="btn btn-light" value="ID중복 체크">
+              <input id="ID_btn" type="button" class="btn btn-light" value="ID중복 체크" onclick="idCheck()">
+              <span id="sp1"></span>
             </div>
 
             <div class="col-12">
@@ -127,7 +128,29 @@
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
       <script src="form-validation.js"></script>
+      <script src="./js/jquery-3.6.0.min.js"></script>
+      <script>
+				function idCheck(){
+					var input = $('#ID').val();
+					$.ajax({
+						type:"post", 			
+						data: {"ID": input}, 	
+						url: "IdCheck_Service",	
+						dataType: "text",		
+						success: function(data) {
+							alert(data);
+							if(data=='true'){
+								$('#sp1').html("불가능한 ID입니다.");
+							}else{
+								$('#sp1').html("가능한 ID입니다.");								
+							}
+						},
+						error: function() {
+							alert("실패!");
+						}
+					});
+				}
+			</script>
   </body>
 </html>

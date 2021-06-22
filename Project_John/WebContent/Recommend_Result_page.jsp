@@ -77,7 +77,7 @@
                         <h4 class="card-title">칵테일 이름</h4>
                         <p class="card-text">마가리타</p>
                         <br>
-                        <h4 class="card-title">한줄 문구</h4>
+                        <h4 class="card-title">내가 작성한 한줄 문구</h4>
                         <p class="card-text">문구다 이자시가</p>
                         <br>
                         <p class="card-text">이 칵테일에 대한 더 많은 정보를 원한다면</p>

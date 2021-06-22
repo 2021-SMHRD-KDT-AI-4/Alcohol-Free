@@ -90,18 +90,15 @@
         <script>
 
           $(document).ready(function() {
-              $('#input-file').on('keyup', function() {
-                  $('#test_cnt').html("("+$(this).val().length+" / 200)");
-        
-                  if($(this).val().length > 200) {
-                      $(this).val($(this).val().substring(0, 200));
-                      $('#test_cnt').html("(200 / 200)");
-                  }
+              $('textarea').keyup(function() {
+            	  var len = $('textarea').val().length;
+            	  $('#test_cnt').text('('+len+' / 200)');
+                  
               });
           });
 
           $(document).ready(function(){ 
-              var fileTarget = $('.filebox .upload-hidden'); 
+              var fileTarget = $('#input-file'); 
               
               fileTarget.on('change', function(){ 
                   if(window.FileReader){ 

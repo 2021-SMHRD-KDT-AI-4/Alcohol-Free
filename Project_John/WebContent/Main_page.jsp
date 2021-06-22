@@ -9,15 +9,19 @@
         <style>
             
             div.left {
-                width: 50%;
+                margin-top: 8%;
+                margin-bottom: 10%;
+                width: 30%;
                 float: left;
+                margin-left: 20%;
 
             }
             div.right {
-                margin-top: 250px;
-                margin-bottom: 258px;
+                margin-top: 16%;
+                margin-bottom: 16%;
                 width: 50%;
                 float: right;
+                
             }
             div.container-fluid {
                 height: 50px;
@@ -62,7 +66,7 @@
 
           <div>
             <div class="left">
-                <img id="Main_img" src="ex01.png">
+                <img id="Main_img" src="./C_IMG/blue_hawaii.png">
             </div>
             <form action="InputPage.jsp">
             <div class="right">

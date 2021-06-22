@@ -1,3 +1,4 @@
+<%@page import="Cocktail.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!doctype html>
@@ -17,8 +18,8 @@
         margin: auto;
       }
       div.container{
-          margin-top: 196px;
-          margin-bottom: 196px;
+          margin-top: 11%;
+          margin-bottom: 11%;
       }
     </style>
   </head>
@@ -60,9 +61,9 @@
   <div class="container">
     <main>
       <div class="py-5 text-center">
-        
+        <% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
         <h2>회원 정보 수정</h2>
-        <p class="lead">접속한 회원 ID:</p>
+        <p class="lead">접속한 회원 ID:<%= info.getId() %></p>
       </div>
 
       <div id="join_form" class="col-md-7 col-lg-8">
@@ -72,38 +73,37 @@
               <div class="col-12">
                 <label for="PW" class="form-label">비밀번호</label>
                 <div class="input-group has-validation">
-                  <input type="password" class="form-control" placeholder="비밀번호를 입력하세요." id="PW" _mstplaceholder="21193315">
+                  <input type="password" class="form-control" placeholder="비밀번호를 입력하세요." id="PW" name="PW">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <label for="alcohol_type" class="form-label">선호하는 주종</label>
-                <input type="text" class="form-control" placeholder="선호하는 주종을 입력하세요." id="ALCOHOL_TYPE" _mstplaceholder="21193315">
+                <input type="text" class="form-control" placeholder="선호하는 주종을 입력하세요." id="ALCOHOL_TYPE" name="ALCOHOL_TYPE">
               </div>
 
               <div class="col-md-6">
                 <label for="alcohol_capacity" class="form-label">주량</label>
-                <input type="text" class="form-control" placeholder="주량을 적어주세요." id="ALCOHOL_CAPACITY" _mstplaceholder="21193315">
+                <input type="text" class="form-control" placeholder="주량을 적어주세요." id="ALCOHOL_CAPACITY" name="ALCOHOL_CAPACITY">
               </div>
 
               <div class="col-12">
                   <label for="flavor" class="form-label">선호하는 맛</label>
-                  <select class="form-select" id="FLAVOR" required>
-                    <option value=""Choose>단맛</option>
-                    <option>독한맛</option>
-                    <option>상쾌한맛</option>
-                    <option>신맛</option>
-                    <option>쓴맛</option>
+                  <select class="form-select" id="FLAVOR" name="FLAVOR" required>
+                    <option value="Sweet">단맛</option>
+                    <option value="Strong">독한맛</option>
+                    <option value="Minty">상쾌한맛</option>
+                    <option value="Sour">신맛</option>
+                    <option value="Bitter">쓴맛</option>
                   </select>
                 </div>
 
-            <hr class="my-4">
-
-            <button class="w-100 btn btn-primary btn-lg" type="submit">정보 수정 완료</button>
+            <input class="w-100 btn btn-primary btn-lg" type="submit" value="정보 수정 완료">
+          </div>
           </form>
-        </div>
-      </div>
-    </main>
+          </div>
+    	</main>
+	</div>
 
 
 

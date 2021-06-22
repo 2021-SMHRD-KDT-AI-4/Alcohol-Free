@@ -28,8 +28,11 @@ public class MemberDTO {
 		this.id = id;
 		this.pw = pw;
 	}
-
-	public MemberDTO(String pw, String alcohol_type, int alcohol_capacity, String flavor) {
+	
+	
+	public MemberDTO(String id, String pw, String alcohol_type, int alcohol_capacity, String flavor) {
+		super();
+		this.id = id;
 		this.pw = pw;
 		this.alcohol_type = alcohol_type;
 		this.alcohol_capacity = alcohol_capacity;
