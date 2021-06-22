@@ -28,7 +28,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Cocktail</a>
+            <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,10 +44,10 @@
                 <a class="nav-link" href="Community.jsp">Community</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="Login.jsp">Login</a>
+                <a class="nav-link" href="Login_page.jsp">Login</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="Mypage.jsp">Mypage</a>
+                <a class="nav-link" href="My_page.jsp">Mypage</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="User_Update_page.jsp">Update</a>
