@@ -49,6 +49,9 @@
                 <li class="nav-item">
                 <a class="nav-link" href="Mypage.jsp">Mypage</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="User_Update_page.jsp">Update</a>
+                </li>
             </ul>
             <form class="d-flex" action="Serch_Service" method="post">
                 <input class="form-control me-sm-2" type="text" placeholder="Search">
