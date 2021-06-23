@@ -15,7 +15,7 @@ public class CommunityDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String durl = "jdbc:oracle:thin:@localhost:1521:xe";
+			String durl = "jdbc:oracle:thin:@172.30.1.53:1521:xe";
 			String did = "hr";
 			String dpw = "hr";
 			
@@ -79,7 +79,7 @@ public class CommunityDAO {
 			rs = psmt.executeQuery();
 			
 			if(rs.next()){
-				like = rs.getInt("like_it");
+				like = rs.getInt("like_cnt");
 			}else {
 				like = 0;
 			}
@@ -97,7 +97,7 @@ public class CommunityDAO {
 		try {
 			getConnection();
 
-			String sql = "UPDATE BOARD_LIKE SET LIKE_IT = LIKE_IT-1 WHERE NUM = ? ";
+			String sql = "UPDATE COMMUNITY SET Like_Cnt = Like_Cnt-1 WHERE NUM = ? ";
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setInt(1, btn); 

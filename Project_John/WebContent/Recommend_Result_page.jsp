@@ -1,3 +1,4 @@
+<%@page import="Cocktail.CocktailDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!doctype html>
@@ -57,7 +58,7 @@
     <main>
         <div class="container py-4">
             
-
+		<% CocktailDTO info = (CocktailDTO)session.getAttribute("info"); %>
             <div class="row align-items-md-stretch" style="margin-top: 148px;">
               <div class="col-md-6">
                   <div style="margin-top: 20px;">
@@ -74,11 +75,12 @@
                 <br>
                 <form action="Cocktail_info.jsp">
                     <div class="card-body">
+                     
                         <h4 class="card-title">칵테일 이름</h4>
-                        <p class="card-text">마가리타</p>
+                        <p class="card-text"><%= info.getCocktail_id() %></p>
                         <br>
-                        <h4 class="card-title">내가 작성한 한줄 문구</h4>
-                        <p class="card-text">문구다 이자시가</p>
+                        <h4 class="card-title">한줄 문구</h4>
+                        <p class="card-text"><%= info.getEmotional_len() %></p>
                         <br>
                         <p class="card-text">이 칵테일에 대한 더 많은 정보를 원한다면</p>
                         <input class="btn btn-primary btn-lg" type="submit" value="칵테일 정보 더보기">

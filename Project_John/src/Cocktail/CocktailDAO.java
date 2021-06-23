@@ -18,7 +18,7 @@ public class CocktailDAO {
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 
-				String durl = "jdbc:oracle:thin:@localhost:1521:xe";
+				String durl = "jdbc:oracle:thin:@172.30.1.53:1521:xe";
 				String did = "hr";
 				String dpw = "hr";
 				

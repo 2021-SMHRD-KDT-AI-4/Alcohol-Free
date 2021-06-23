@@ -249,7 +249,7 @@
    var num = 1;
    $('#write_com').on('click', function(){
       var com = $('input[type=text]').val();
-      $('#comments').append('<li class="com'+num+'">'+com+'<input type="button" value="´ñ±Û»èÁ¦" onclick="del('+num+')"></li>');
+      $('#comments').append('<li class="com'+num+'">'+com+'<input class="btn btn-light" type="button" value="´ñ±Û»èÁ¦" onclick="del('+num+')"></li>');
       num++;
       $('input[type=text]').val('');
    });
@@ -265,7 +265,7 @@
             data : {
                "board_num" : $('#board_num').html()
             },
-            url : "likeService",
+            url : "Like_Service",
             dataType : "text",
             success : function(data){
                
@@ -282,7 +282,7 @@
             data : {
                "board_num" : $('#board_num').html()
             },
-            url : "dislikeService",
+            url : "DisLike_Service",
             dataType : "text",
             success : function(data){
                

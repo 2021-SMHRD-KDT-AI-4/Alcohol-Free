@@ -8,9 +8,10 @@ public class CommunityDTO {
 	private int comment_Num;
 	private String comments;
 	private int write_Date;
+	private int num;
 	
 	public CommunityDTO(String user_ID, String user_IMG, int post_Num, int like_Cnt, int comment_Num, String comments,
-			int write_Date) {
+			int write_Date, int num) {
 		super();
 		this.user_ID = user_ID;
 		this.user_IMG = user_IMG;
@@ -19,6 +20,7 @@ public class CommunityDTO {
 		this.comment_Num = comment_Num;
 		this.comments = comments;
 		this.write_Date = write_Date;
+		this.num = num;
 	}
 
 	public String getUser_ID() {
@@ -76,6 +78,16 @@ public class CommunityDTO {
 	public void setWrite_Date(int write_Date) {
 		this.write_Date = write_Date;
 	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	
 	
 	
 }
