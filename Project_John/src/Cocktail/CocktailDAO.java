@@ -31,6 +31,32 @@ public class CocktailDAO {
 			}
 			
 		}
+	      public String Search_cocktail(String Search_content) {
+	            
+	          
+	          try {
+	             getConnection();
+	             String sql = "SELECT * FROM COCKTAIL WHERE COCKTAIL_ID=?";
+	             
+	             psmt = conn.prepareStatement(sql);
+	             psmt.setString(1,Search_content);
+	             
+	             rs = psmt.executeQuery();
+	             if(rs.next()) {
+	                String cocktail_id = rs.getString(1);
+	                
+	             }
+	          
+	          }catch (SQLException e) {
+	             e.printStackTrace();
+	          }finally {
+	             getClose();
+	          }
+	          
+	          return cocktail_id;
+	       }
+
+		
 		
 		private void getClose() {
 			try {
@@ -67,6 +93,38 @@ public class CocktailDAO {
 			}
 			
 			return cnt;
+		}
+		
+		public CocktailDTO C_Info(CocktailDTO dto) {
+			CocktailDTO cinfo = null;
+			
+			try {
+				getConnection();
+				String sql = "SELECT Alc_Vol, Flavor, Base, Recipe,Ingredient , Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT ? FROM RESULT)";
+				
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, dto.getCocktail_id());
+				
+				rs = psmt.executeQuery();
+				
+				if(rs.next()) {
+					int alc_Vol = rs.getInt(1);
+					String base = rs.getString(2);
+					String flavor = rs.getString(3);
+					String ingredient = rs.getString(4);
+					String recipe = rs.getString(5);
+					String cocktail_his = rs.getString(6);
+													
+					cinfo = new CocktailDTO(cocktail_his, recipe, alc_Vol, base, flavor, ingredient);
+							
+				}		
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				getClose();
+			}
+			
+			return cinfo;
 		}
 		
 		

@@ -8,14 +8,12 @@ CREATE TABLE W_USER(
 	Age number,
 	Alcohol_Type varchar2(50),
 	Alcohol_Capacity number,	
-	Favotite_Flavor varchar2(50),
-	Cocktail_IMG varchar2(50),
-	Cocktail_ID varchar2(50)
+	Favotite_Flavor varchar2(50)
 )
 
 select * from W_USER;
 
-insert into W_USER values('abc', '123456', 'hola', '여자', 20, '위스키', 2, '단맛', './C_IMG/margarita.png', '마가리타')
+insert into W_USER values('abc', '123456', 'hola', '여자', 20, '위스키', 2, '단맛')
 
 CREATE SEQUENCE R_NUM START WITH 1 INCREMENT BY 1;
 
@@ -26,6 +24,10 @@ CREATE TABLE RESULT(
    COCKTAIL_ID VARCHAR2(50)
 );
 
+SELECT * FROM RESULT;
+
+INSERT INTO RESULT values(R_NUM.NEXTVAL,'abc','아 왜 안들어가냐', '마가리타');
+
 CREATE SEQUENCE W_Num START WITH 1 INCREMENT BY 1;
 
 CREATE TABLE WISHLIST(
@@ -34,6 +36,10 @@ CREATE TABLE WISHLIST(
    W_Num NUMBER,
    A_1 VARCHAR2(500)
 );
+
+INSERT INTO WISHLIST values('abc','마가리타', W_Num.NEXTVAL, '아 왜 안들어가냐');
+
+SELECT * FROM WISHLIST;
 
 DROP table COMMUNITY;
 
@@ -71,6 +77,8 @@ CREATE TABLE COCKTAIL(
 	Cocktail_IMG varchar2(50),
 	Emotional_Len varchar2(500)
 )
+
+SELECT Alc_Vol, Flavor, Base, Recipe, Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT Cocktail_ID FROM RESULT)
 
 INSERT INTO COCKTAIL (COCKTAIL_ID, ALC_VOL, INGREDIENT, RECIPE, COCKTAIL_HIS, BASE, FLAVOR, COCKTAIL_IMG, EMOTIONAL_LEN) VALUES ('마가리타',34,'테킬라 | 22.5ml 소주잔 반잔,크왕트로 | 22.5ml 소주잔 반잔,자두주스| 15ml 소주잔 1/4잔,자두 조각,가는 소금,오이 껍질','1. 자두 조각으로 유리잔의 테를 문지른다,2. 테에 가는 소금을 묻혀 프로스팅(frosting)을 입힌다,3. 테킬라와 크왕트로를 자두주스와 함께 얼음을 가득 채운 칵테일 용기에 넣고 약 20초간 흔든다,4. 차게 한 유리잔에 칵테일을 따른다,5. 칼로 길고 얇게 오이 껍질을 벗긴다,6. 칵테일 막대로 오이 껍질을 꿰어서 장식용으로 잔 속에 넣는다','Margarita는 창작자의 연인 이름이라고 한다','데킬라','신맛','./C_IMG/margarita.png','오늘의 당신은 충분히 사랑스러웠어요!');
 

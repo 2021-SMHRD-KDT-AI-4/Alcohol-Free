@@ -17,6 +17,10 @@
       div.b{
         margin-bottom: 148px;
       }
+      div.c{
+      padding-top: 100px;
+      text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -59,6 +63,10 @@
         <div class="container py-4">
             
 		<% CocktailDTO info = (CocktailDTO)session.getAttribute("info"); %>
+			<div class="c">
+				<h3 class="fw-light">추천 결과 보기 </h3>
+				<input class="btn btn-light" id="like_btn" type="button" value="추천 결과 보기" style="width: 150px;" onclick="">
+			</div>
             <div class="row align-items-md-stretch" style="margin-top: 148px;">
               <div class="col-md-6">
                   <div style="margin-top: 20px;">
@@ -71,16 +79,17 @@
               <div class="col-md-6 card border-info mb-3">
                 <div style="margin-top: 20px;">
                 <div class="card-header"><h2>오늘의 칵테일</h2></div>
+                
                 <br>
                 <br>
                 <form action="Cocktail_info.jsp">
                     <div class="card-body">
                      
                         <h4 class="card-title">칵테일 이름</h4>
-                        <p class="card-text"><%= info.getCocktail_id() %></p>
+                        <p class="card-text"></p>
                         <br>
                         <h4 class="card-title">한줄 문구</h4>
-                        <p class="card-text"><%= info.getEmotional_len() %></p>
+                        <p class="card-text"></p>
                         <br>
                         <p class="card-text">이 칵테일에 대한 더 많은 정보를 원한다면</p>
                         <input class="btn btn-primary btn-lg" type="submit" value="칵테일 정보 더보기">

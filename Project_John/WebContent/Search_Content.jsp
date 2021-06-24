@@ -1,8 +1,12 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Cocktail.CocktailDAO"%>
+<%@page import="Cocktail.CocktailDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="EUC-KR">
 <title>SEARCH</title>
 <link rel="stylesheet" href="css/bootstrap.css">
@@ -20,6 +24,7 @@
 </style>
 </head>
 <body>
+
 <br>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -55,16 +60,17 @@
         <p class="lead">
             <br>
             <form class="d-flex" action="Search_Content.jsp" method="post">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
+                <input id = "Search_content"  class="form-control me-sm-2" type="text" placeholder="Search" name ="Search_content">
+ 
+                <input class="btn btn-secondary my-2 my-sm-0" type="button" value="Search" onclick="searchFunction()" >
             </form>
         </p>
     </div>
 
-    <div class="container py-4">
+    <div class="container py-4" id= "ajaxTable">
         <div class="card border-dark mb-3">
-            <div class="container-fluid py-5">
-              <p class="col-md-8 fs-4">내용</p>
+            <div class="container-fluid py-5">           
+              <p id="p" class="col-md-8 fs-4"></p>
             </div>
         </div>
         <div class="card border-dark mb-3">
@@ -97,6 +103,36 @@
         
           
 
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="./js/bootstrap.bundle.min.js"></script> -->
+
+
+<script src="./js/jquery-3.6.0.min.js"></script>
+  
+         <script>
+            function searchFunction(){
+               var input =$('#Search_content').val();
+                
+               
+               $.ajax({
+                  type :"post", //데이터 보내는 방식
+                  data : {"Search_content": input}, // 서버로 보내는 데이터  
+                  url : "Search_Service" , //  서버 파일 이름
+                  dataType : "text",
+                  success : function(data){
+                           alert(data);         
+                           
+                      $('#p').html(data); 
+                     
+                  },
+                  error : function(){
+                     alert("바보");
+                  }
+               })
+               
+               
+            }
+         
+         </script>
+
 </body>
 </html>

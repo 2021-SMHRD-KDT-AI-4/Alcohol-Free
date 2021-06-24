@@ -53,7 +53,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "INSERT INTO W_USER2 VALUES(?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO W_USER VALUES(?,?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
@@ -87,7 +87,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "SELECT * FROM W_USER2 WHERE user_ID = ? AND user_PW = ?";
+			String sql = "SELECT * FROM W_USER WHERE user_ID = ? AND user_PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
@@ -121,7 +121,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 		
-			String sql = "UPDATE W_USER2 SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ? FLAVOR = ? WHERE User_ID = ? AND USER_PW = ?";
+			String sql = "UPDATE W_USER SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ? FLAVOR = ? WHERE User_ID = ? AND USER_PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
 			psmt.setString(2, dto.getAlcohol_type());
@@ -148,7 +148,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 			
-			String sql = "SELECT * FROM W_USER2 WHERE User_ID = ?";
+			String sql = "SELECT * FROM W_USER WHERE User_ID = ?";
 			
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, ID);

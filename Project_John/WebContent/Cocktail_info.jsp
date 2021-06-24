@@ -1,5 +1,21 @@
+<%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Cocktail.CocktailDTO"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%
+	Connection conn = null;
+	PreparedStatement psmt = null;
+	ResultSet rs = null;
+	String durl = "jdbc:oracle:thin:@172.30.1.53:1521:xe";
+	String did = "hr";
+	String dpw = "hr";
+	String sql = "SELECT Alc_Vol, Flavor, Base, Recipe,Ingredient , Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT ? FROM RESULT)";
+%>
+    
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,7 +37,7 @@
 
   </head>
   <body>
-
+	
     <br>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
@@ -55,8 +71,13 @@
         </div>
     </nav>
     
+    <%
+    try {
+		psmt = conn.prepareStatement(sql);
+		rs = psmt.executeQuery();
+		
+    %>
 <main>
-
     <h1>칵테일 정보 더보기</h1>
     
     <br>
@@ -67,10 +88,13 @@
               <div style="margin-top: 20px;">
             <div class="card-header"><h2>칵테일 정보</h2></div>
                 <div class="card-body">
+                <% if(rs.next()) { %>
                     <h4 class="card-title">도수</h4>
-                    <p class="card-text">10도</p>
+                    <p class="card-text"><%= rs.getInt(1) %></p>
                     <h4 class="card-title">맛</h4>
-                    <p class="card-text">단맛</p>
+                    <p class="card-text"><%= rs.getString(3) %></p>
+                    <h4 class="card-title">베이스</h4>
+                    <p class="card-text"><%= rs.getString(2) %></p>
                 </div>
             </div>
           </div>
@@ -78,11 +102,11 @@
             <div style="margin-top: 20px;">
             <div class="card-header"><h2>칵테일 레시피</h2></div>
                 <div class="card-body">
+                    <h4 class="card-title">재료</h4>
+                    <p class="card-text"><%= rs.getString(4) %></p>
                     <h4 class="card-title">레시피</h4>
-                    <p class="card-text">1.일번을 넣는다</p>
-                    <p class="card-text">2.이번을 넣는다</p>
-                    <p class="card-text">3.섞는다</p>
-                    <p class="card-text">4.마신다</p>
+                    <p class="card-text"><%= rs.getString(5) %></p>
+                    
                 </div>
             </div>
         </div>
@@ -90,11 +114,37 @@
         <div class="card bg-light mb-3">
             <div class="container-fluid py-5 text-primary">
               <h2 class="display-5 fw-bold">유래</h2>
-              <p class="col-md-8 fs-4">칵테일 유래</p>
+              <p class="col-md-8 fs-4"><%= rs.getString(6) %></p>
+              <% }
+	}catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		try{
+			if(rs != null){
+				rs.close();
+			}
+			if(psmt != null){
+				psmt.close();
+			}
+			if(conn != null){
+				conn.close();
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	} %>
             </div>
           </div>
-</main>
+		</div>
+	</div>
+	</main>
+	
 
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script>
+
+</script>
 
     
   </body>

@@ -24,6 +24,24 @@ public class CocktailDTO {
 		this.flavor = flavor;
 		this.ingredient = ingredient;
 	}
+	
+	public CocktailDTO(String cocktail_id) {
+		super();
+		this.cocktail_id = cocktail_id;
+	}
+
+	public CocktailDTO(String cocktail_his, String recipe, int alc_Vol, String base, String flavor,
+			String ingredient) {
+		super();
+		this.cocktail_his = cocktail_his;
+		this.recipe = recipe;
+		this.alc_Vol = alc_Vol;
+		this.base = base;
+		this.flavor = flavor;
+		this.ingredient = ingredient;
+	}
+
+
 
 	public String getCocktail_id() {
 		return cocktail_id;

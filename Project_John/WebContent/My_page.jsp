@@ -81,12 +81,14 @@
         </section>
 
         <div class="container">
-
+		<h3 class="fw-light">찜목록 </h3>
+          <input class="btn btn-light" id="like_btn" type="button" value="찜목록 보기" style="width: 150px" onclick="">
+          <input class="btn btn-light" id="like_btn" type="button" value="리뷰 작성" style="width: 150px" onclick="">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          
             <div class="col">
               <div class="card shadow-sm">
                 <img src="./C_IMG/margarita.png">
-
                 <div class="card-body">
                   <p class="card-text">칵테일이름</p>
                   <p class="card-text">"내가 남긴 한줄문구"</p>
