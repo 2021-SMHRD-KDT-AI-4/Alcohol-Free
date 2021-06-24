@@ -45,10 +45,7 @@
                 <a class="nav-link" href="My_page.jsp">Mypage</a>
               </li>
             </ul>
-            <form class="d-flex" action="Search_Content.jsp" method="post">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
-            </form>
+            
             </div>
         </div>
     </nav>
@@ -68,7 +65,8 @@
                 <div class="col p-4 d-flex flex-column position-static">
                 <table>
                     <tr>
-                        <td width="20%"></td>
+                        <td width="20%"><span id="board_num">1</span></td>
+                        
                         <td >누구님의 리뷰</td>
                     </tr>
                     <tr >
@@ -78,13 +76,12 @@
                         <td colspan="2" >리뷰내용</td>
                     </tr>
                     <tr>
-                        <td width="250" align="right">
-                        	<span id="board_num">1</span>
+                        <td width="250" align="right" colspan="2">
+                        	
+                        	<span id="like_result"></span>
                             <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
                         </td>
-                        <td align="left">
-                            <span id="like_result"></span>
-                        </td>
+                        
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -134,7 +131,7 @@
                     <tr>
                         <td colspan="2">
                         <form class="d-flex">
-                            <input class="form-control me-sm-2" type="text" placeholder="댓글을 입력하세요">
+                            <input class="form-control me-sm-2"  placeholder="댓글을 입력하세요">
                             <input class="btn btn-light" id="write_com" type="button" value="댓글작성">
                             </form>
                         </td>
@@ -151,96 +148,7 @@
 
         </div>
     </div>
-    <div class="container py-4" style="margin: auto;">
-        <div class="row mb-2">
-            <div class="col-md-6 card border-info mb-3" style="width: 45%;">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                <table>
-                    <tr>
-                        <td width="20%"></td>
-                        <td >누구님의 리뷰</td>
-                    </tr>
-                    <tr >
-                        <td colspan="2" >이미지</td>
-                    </tr>
-                    <tr >
-                        <td colspan="2" >리뷰내용</td>
-                    </tr>
-                    <tr>
-                        <td width="250" align="right">
-                        	<span id="board_num">1</span>
-                            <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
-                        </td>
-                        <td align="left">
-                            <span id="like_result"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                        <form class="d-flex">
-                            <input class="form-control me-sm-2" type="text" placeholder="댓글을 입력하세요">
-                            <input class="btn btn-light" id="write_com" type="button" value="댓글작성">
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <ul id="comments" style="list-style:none; padding:0"></ul>
-                        </td>
-                    </tr>
-                </table>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                </div>
-            </div>
-        </div>
-
-        <div style="width: 8%;"></div>
-
-            <div class="col-md-6 card border-info mb-3" style="width: 45%;">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                <table>
-                    <tr>
-                        <td width="20%"></td>
-                        <td >누구님의 리뷰</td>
-                    </tr>
-                    <tr >
-                        <td colspan="2" >이미지</td>
-                    </tr>
-                    <tr >
-                        <td colspan="2" >리뷰내용</td>
-                    </tr>
-                    <tr>
-                        <td width="250" align="right">
-                        	<span id="board_num">1</span>
-                            <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
-                        </td>
-                        <td align="left">
-                            <span id="like_result"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                        <form class="d-flex">
-                            <input class="form-control me-sm-2" type="text" placeholder="댓글을 입력하세요">
-                            <input class="btn btn-light" id="write_com" type="button" value="댓글작성">
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <ul id="comments" style="list-style:none; padding:0"></ul>
-                        </td>
-                    </tr>
-                </table>
-                </div>
-            </div>
-            </div>
-
-        </div>
-    </div>
+    
     
 
 <script src="./js/jquery-3.6.0.min.js"></script>
@@ -295,6 +203,31 @@
          });
       }
    }
+   
+   var data2 = [];
+	/* 버튼 눌렀을 때 실행될 함수 */
+	function Recomend(){
+		 $.ajax({
+		   	 url : 'Recommend_Sevice', /* 데이터를 가지고 올 서블릿, JSP 등 주소 */
+		   	 success : function(data){
+		   		 alert("성공");
+		   		 console.log(data);
+		   		 data2 = data;
+		   		 $('div#cimg').append("<img src=" + JIMG +">");
+		   		 $('p#cname').append("<p>"+ JID +"</p>" );
+		   		 $('p#crecomend').append("<p>"+ JLEN +"</p>");
+		   		 $('p#avol').append("<p>"+ JVOL +"</p>");
+		   		 $('p#base').append("<p>"+ JBASE +"</p>");
+		   		 $('p#flavor').append("<p>"+ JFLAVOR +"</p>");
+		   		 $('p#ci').append("<p>"+ JINGREDIENT +"</p>");
+		   		 $('p#rec').append("<p>"+ JREC +"</p>");
+		   		 $('p#his').append("<p>"+ JHIS +"</p>");
+		   	 },
+		     	 error : function(){
+		     		 alert("실패");
+		     	 }
+		     });
+	}
 </script>
 
 </body>

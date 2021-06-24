@@ -31,33 +31,7 @@ public class CocktailDAO {
 			}
 			
 		}
-	      public String Search_cocktail(String Search_content) {
-	            
-	          
-	          try {
-	             getConnection();
-	             String sql = "SELECT * FROM COCKTAIL WHERE COCKTAIL_ID=?";
-	             
-	             psmt = conn.prepareStatement(sql);
-	             psmt.setString(1,Search_content);
-	             
-	             rs = psmt.executeQuery();
-	             if(rs.next()) {
-	                String cocktail_id = rs.getString(1);
-	                
-	             }
-	          
-	          }catch (SQLException e) {
-	             e.printStackTrace();
-	          }finally {
-	             getClose();
-	          }
-	          
-	          return cocktail_id;
-	       }
 
-		
-		
 		private void getClose() {
 			try {
 				if(rs != null){
@@ -96,18 +70,20 @@ public class CocktailDAO {
 		}
 		
 		public CocktailDTO C_Info(String id) {
-			CocktailDTO cinfo = null;
+			
+			ResultDTO dto = null;
 			
 			try {
 				getConnection();
-				String sql = "SELECT cocktail_IMG Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT Cocktail_ID FROM RESULT)";
+//				String sql = "SELECT cocktail_IMG Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT Cocktail_ID FROM RESULT)";
+				String sql = "SELECT cocktail_IMG, c.Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL c, result r WHERE c.Cocktail_ID = r.Cocktail_ID and r.A_1 = '?'";
 				
 				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, id);
+				psmt.setString(1, dto.getA_1());
 				
 				rs = psmt.executeQuery();
 				
-				if(rs.next()) {
+				while(rs.next()) {
 					String cocktail_IMG = rs.getString(1);
 					String Cocktail_ID = rs.getString(2);
 					String Emotional_Len = rs.getString(3);
@@ -117,7 +93,7 @@ public class CocktailDAO {
 					String ingredient = rs.getString(7);
 					String recipe = rs.getString(8);
 					String cocktail_his = rs.getString(9);
-													
+											
 					cinfo = new CocktailDTO(cocktail_IMG, Cocktail_ID, Emotional_Len, alc_Vol, base, flavor, ingredient, recipe, cocktail_his);
 							
 				}		

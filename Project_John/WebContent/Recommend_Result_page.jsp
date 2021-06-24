@@ -58,10 +58,7 @@
                 <a class="nav-link" href="My_page.jsp">Mypage</a>
                 </li>
             </ul>
-            <form class="d-flex" action="Search_Content.jsp" method="post">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">
-            </form>
+           
             </div>
         </div>
     </nav>
@@ -78,8 +75,8 @@
               <div class="col-md-6">
                   <div style="margin-top: 20px;">
                 <div class="card-header"></div>
-                    <div class="card-body">
-                        <img src=>
+                    <div class="card-body" id="cimg">
+                        
                     </div>
                 </div>
               </div>
@@ -116,10 +113,10 @@
                 <div class="card-body">
                     <h4 class="card-title">도수</h4>
                     <p class="card-text" id="avol"></p>
-                    <h4 class="card-title">맛</h4>
-                    <p class="card-text" id="flavor"></p>
                     <h4 class="card-title">베이스</h4>
                     <p class="card-text" id="base"></p>
+                    <h4 class="card-title">맛</h4>
+                    <p class="card-text" id="flavor"></p>
                 </div>
             </div>
           </div>
@@ -139,7 +136,7 @@
         <div class="card bg-light mb-3">
             <div class="container-fluid py-5 text-primary">
               <h2 class="display-5 fw-bold">유래</h2>
-              <p class="col-md-8 fs-4"></p>
+              <p class="col-md-8 fs-4" id="his"></p>
 
             </div>
           </div>
@@ -155,12 +152,20 @@
 	/* 버튼 눌렀을 때 실행될 함수 */
 	function Recomend(){
 		 $.ajax({
-		   	 url : 'test', /* 데이터를 가지고 올 서블릿, JSP 등 주소 */
+		   	 url : 'Recommend_Sevice', /* 데이터를 가지고 올 서블릿, JSP 등 주소 */
 		   	 success : function(data){
 		   		 alert("성공");
 		   		 console.log(data);
 		   		 data2 = data;
-		   		 
+		   		 $('div#cimg').append("<img src=" + JIMG +">");
+		   		 $('p#cname').append("<p>"+ JID +"</p>" );
+		   		 $('p#crecomend').append("<p>"+ JLEN +"</p>");
+		   		 $('p#avol').append("<p>"+ JVOL +"</p>");
+		   		 $('p#base').append("<p>"+ JBASE +"</p>");
+		   		 $('p#flavor').append("<p>"+ JFLAVOR +"</p>");
+		   		 $('p#ci').append("<p>"+ JINGREDIENT +"</p>");
+		   		 $('p#rec').append("<p>"+ JREC +"</p>");
+		   		 $('p#his').append("<p>"+ JHIS +"</p>");
 		   	 },
 		     	 error : function(){
 		     		 alert("실패");
