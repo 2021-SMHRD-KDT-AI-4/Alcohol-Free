@@ -95,27 +95,30 @@ public class CocktailDAO {
 			return cnt;
 		}
 		
-		public CocktailDTO C_Info(CocktailDTO dto) {
+		public CocktailDTO C_Info(String id) {
 			CocktailDTO cinfo = null;
 			
 			try {
 				getConnection();
-				String sql = "SELECT Alc_Vol, Flavor, Base, Recipe,Ingredient , Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT ? FROM RESULT)";
+				String sql = "SELECT cocktail_IMG Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT Cocktail_ID FROM RESULT)";
 				
 				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, dto.getCocktail_id());
+				psmt.setString(1, id);
 				
 				rs = psmt.executeQuery();
 				
 				if(rs.next()) {
-					int alc_Vol = rs.getInt(1);
-					String base = rs.getString(2);
-					String flavor = rs.getString(3);
-					String ingredient = rs.getString(4);
-					String recipe = rs.getString(5);
-					String cocktail_his = rs.getString(6);
+					String cocktail_IMG = rs.getString(1);
+					String Cocktail_ID = rs.getString(2);
+					String Emotional_Len = rs.getString(3);
+					int alc_Vol = rs.getInt(4);
+					String base = rs.getString(5);
+					String flavor = rs.getString(6);
+					String ingredient = rs.getString(7);
+					String recipe = rs.getString(8);
+					String cocktail_his = rs.getString(9);
 													
-					cinfo = new CocktailDTO(cocktail_his, recipe, alc_Vol, base, flavor, ingredient);
+					cinfo = new CocktailDTO(cocktail_IMG, Cocktail_ID, Emotional_Len, alc_Vol, base, flavor, ingredient, recipe, cocktail_his);
 							
 				}		
 			}catch (SQLException e) {

@@ -29,19 +29,20 @@ public class CocktailDTO {
 		super();
 		this.cocktail_id = cocktail_id;
 	}
-
-	public CocktailDTO(String cocktail_his, String recipe, int alc_Vol, String base, String flavor,
-			String ingredient) {
+	
+	public CocktailDTO(String cocktail_IMG, String cocktail_id, String emotional_len, int alc_Vol, String base, String flavor, String ingredient,
+			String recipe, String cocktail_his) {
 		super();
+		this.cocktail_IMG = cocktail_IMG;
+		this.cocktail_id = cocktail_id;
 		this.cocktail_his = cocktail_his;
 		this.recipe = recipe;
 		this.alc_Vol = alc_Vol;
+		this.emotional_len = emotional_len;
 		this.base = base;
 		this.flavor = flavor;
 		this.ingredient = ingredient;
 	}
-
-
 
 	public String getCocktail_id() {
 		return cocktail_id;

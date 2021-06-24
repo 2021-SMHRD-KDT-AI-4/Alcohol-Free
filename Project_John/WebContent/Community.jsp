@@ -124,7 +124,7 @@
                     </tr>
                     <tr>
                         <td width="250" align="right">
-                        	<span id="board_num">1</span>
+                        	<span id="board_num"></span>
                             <input class="btn btn-light" id="like_btn" type="button" value="ÁÁ¾Æ¿ä" onclick="like()">
                         </td>
                         <td align="left">

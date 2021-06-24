@@ -2,43 +2,44 @@ package Cocktail;
 
 public class ReviewDTO {
 
-   private String Title;
-   private String Input_file;
-   @SuppressWarnings("unused")
-   private String Content;
-   
-   public ReviewDTO(String Title, String Input_file, String Content) {
-      super();
-      
-      this.setTitle(Title);
-      this.setInput_file(Input_file);
-      this.Content = Content;
+	private String TITLE;
+	private String Input_file;
+	private String Content;
+	
+	public ReviewDTO(String TITLE, String Input_file, String Content) {
+		super();
+		
+		this.setTITLE(TITLE);
+		this.setInput_file(Input_file);
+		this.setContent(Content);
+		
+		
+	}
 
-   }
+	public String getTITLE() {
+		return TITLE;
+	}
 
-   public String getTitle() {
-      return Title;
-   }
+	public void setTITLE(String tITLE) {
+		TITLE = tITLE;
+	}
 
-   public void setTitle(String title) {
-      Title = title;
-   }
+	public String getInput_file() {
+		return Input_file;
+	}
 
-   public String getInput_file() {
-      return Input_file;
-   }
+	public void setInput_file(String input_file) {
+		Input_file = input_file;
+	}
 
-   public void setInput_file(String input_file) {
-      Input_file = input_file;
-   }
+	public String getContent() {
+		return Content;
+	}
 
-   public String getContent() {
-      return Content;
-   }
+	public void setContent(String content) {
+		Content = content;
+	}
 
-   public void setContent(String content) {
-      Content = content;
-   }
-   
-   
+	
+	
 }

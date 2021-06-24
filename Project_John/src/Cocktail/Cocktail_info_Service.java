@@ -13,22 +13,7 @@ public class Cocktail_info_Service extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
-		String HIS = request.getParameter("cocktail_his");
-		String RECIPE = request.getParameter("recipe");
-		int VOL = Integer.parseInt("alc_Vol");
-		String BASE = request.getParameter("base");
-		String FLAVOR = request.getParameter("flavor");
-		String INGREDIENT = request.getParameter("ingredient");
 		
-		CocktailDAO dao = new CocktailDAO();
-		CocktailDTO dto = new CocktailDTO(HIS, RECIPE, VOL, BASE, FLAVOR, INGREDIENT);
-		CocktailDTO cinfo = dao.C_Info(dto);
-		
-		if(cinfo != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("cinfo", cinfo);
-		}
 	}
 
 }

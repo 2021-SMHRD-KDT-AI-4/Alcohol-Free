@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@page import="Cocktail.MemberDTO"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -61,18 +62,26 @@
         </div>
         </nav>
 
-
+		
+		<% 
+	    MemberDTO info = (MemberDTO)session.getAttribute("info"); 
+		%>
+		
+		
     <main>
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
+                <% if(info!= null){
+                     %>
                     <h1 class="fw-light">마이페이지</h1>
                     <br>
                     <p>
                         <div id="al" class="card border-info mb-3" style="max-width: 20rem;">
                             <div class="card-header">주량</div>
                             <div class="card-body">
-                                <p class="card-text">병</p>
+                                <p class="card-text"><%=info.getAlcohol_capacity() %>병</p>
+                                <%} %>
                         	</div>
                     	</div>
                     </p>
@@ -82,8 +91,8 @@
 
         <div class="container">
 		<h3 class="fw-light">찜목록 </h3>
-          <input class="btn btn-light" id="like_btn" type="button" value="찜목록 보기" style="width: 150px" onclick="">
-          <input class="btn btn-light" id="like_btn" type="button" value="리뷰 작성" style="width: 150px" onclick="">
+          <input class="btn btn-light" id="like_btn" type="button" value="찜목록 보기" style="width: 150px" onclick="location.href='Recommend_Result_page.jsp'">
+          <input class="btn btn-light" id="like_btn" type="button" value="리뷰 작성" style="width: 150px" onclick="location.href='Review.jsp'">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           
             <div class="col">

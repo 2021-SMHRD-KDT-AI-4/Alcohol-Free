@@ -71,12 +71,6 @@
         </div>
     </nav>
     
-    <%
-    try {
-		psmt = conn.prepareStatement(sql);
-		rs = psmt.executeQuery();
-		
-    %>
 <main>
     <h1>칵테일 정보 더보기</h1>
     
@@ -115,25 +109,7 @@
             <div class="container-fluid py-5 text-primary">
               <h2 class="display-5 fw-bold">유래</h2>
               <p class="col-md-8 fs-4"><%= rs.getString(6) %></p>
-              <% }
-	}catch (Exception e) {
-		e.printStackTrace();
-	}finally {
-		try{
-			if(rs != null){
-				rs.close();
-			}
-			if(psmt != null){
-				psmt.close();
-			}
-			if(conn != null){
-				conn.close();
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-	} %>
+
             </div>
           </div>
 		</div>
