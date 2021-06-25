@@ -32,7 +32,7 @@
     
     <body class="bg-light">
     <br>
-
+ <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
@@ -50,15 +50,24 @@
                 <li class="nav-item">
                 <a class="nav-link" href="Community.jsp">Community</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="Login_page.jsp">Login</a>
-                </li>
-                <li class="nav-item">
+                <%if(info!= null) {%>
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="LogoutService">Logout</a>
+                  </li>
+                   <li class="nav-item">
                 <a class="nav-link" href="My_page.jsp">Mypage</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="User_Update_page.jsp">Update</a>
                 </li>
+                   <%}else{ %>
+                   <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                   
+                  <%} %>
+               
             </ul>
             
             </div>
@@ -67,7 +76,7 @@
 
 		
 		<% 
-	    MemberDTO info = (MemberDTO)session.getAttribute("info"); 
+	  
 		WishlistDAO wdao = new WishlistDAO();
 		WishlistDTO wdto = new WishlistDTO(info.getId());
 		ArrayList<WishlistDTO> list = wdao.wishlist(wdto);

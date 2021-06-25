@@ -1,6 +1,8 @@
 package Cocktail;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
@@ -34,16 +36,21 @@ public class Review_Service extends HttpServlet {
 				
 		String TITLE = multi.getParameter("TITLE");
 
-		String INPUT_FILE = URLEncoder.encode(multi.getFilesystemName("INPUT_FILE"), "EUC-KR");
-		String CONTENT = multi.getParameter("CONTENT");
-				
-		System.out.println("TITLE : "+TITLE);
-		System.out.println("INPUT_FILE : "+INPUT_FILE);
-		System.out.println("CONTENT : "+CONTENT);
+		String user_IMG = URLEncoder.encode(multi.getFilesystemName("INPUT_FILE"), "EUC-KR");
+		String post = multi.getParameter("CONTENT");
+
 		
-		ReviewDTO dto = new ReviewDTO(TITLE, INPUT_FILE, CONTENT);
-		ReviewDAO dao = new ReviewDAO();
-		int cnt = dao.insert(dto);
+		String id = request.getParameter("user_id");
+		System.out.println("user_id"+id);
+		
+		
+		
+   
+				
+		
+		CommunityDTO cdto = new CommunityDTO(id, user_IMG, post, TITLE);
+		CommunityDAO cdao = new CommunityDAO();
+		int cnt = cdao.community_insert(cdto);
 				
 		if(cnt>0) {
 			System.out.println("리뷰 작성 성공");

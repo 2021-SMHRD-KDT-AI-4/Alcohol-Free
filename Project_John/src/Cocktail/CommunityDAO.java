@@ -119,13 +119,12 @@ public int community_insert(CommunityDTO dto) {
 		try {
 			getConnection();
 			
-			String sql = "INSERT INTO community VALUES(?,?,Post_Num.NEXTVAL,?,0,Comment_Num.NEXTVAL,'',sysdate,?)";
+			String sql = "INSERT INTO community VALUES(?,?,Post_Num.NEXTVAL,?,0,sysdate,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getUser_ID());
 			psmt.setString(2, dto.getUser_IMG());
-			psmt.setString(3, dto.getPost());			
-			psmt.setString(4, dto.getComments());						
-			psmt.setString(5, dto.getTITLE());
+			psmt.setString(3, dto.getPost());								
+			psmt.setString(4, dto.getTITLE());
 			
 			cnt = psmt.executeUpdate();
 			
@@ -161,9 +160,8 @@ public int community_insert(CommunityDTO dto) {
 				String user_IMG = rs.getString(2);
 				String post = rs.getString(4);
 				int like_Cnt = rs.getInt(5);
-				String comments = rs.getString(7);
-				String TITLE = rs.getString(9);
-				CommunityDTO cdto=new CommunityDTO(user_ID, user_IMG, post, like_Cnt, comments, TITLE);
+				String TITLE = rs.getString(7);
+				CommunityDTO cdto=new CommunityDTO(user_ID, user_IMG, post, like_Cnt, TITLE);
          	    list.add(cdto);
 			     
 			}		

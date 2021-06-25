@@ -25,7 +25,7 @@
   </head>
   <body class="bg-light">
     <br>
-
+ <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
@@ -43,12 +43,21 @@
               <li class="nav-item">
                 <a class="nav-link" href="Community.jsp">Community</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Login_page.jsp">Login</a>
-              </li>
-              <li class="nav-item">
+               <%if(info!= null) {%>
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="LogoutService">Logout</a>
+                  </li>
+                  <li class="nav-item">
                 <a class="nav-link" href="My_page.jsp">Mypage</a>
               </li>
+                   <%}else{ %>
+                   <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                   
+                  <%} %>
+              
             </ul>
             
           </div>
@@ -58,7 +67,7 @@
   <div class="container">
     <main>
       <div class="py-5 text-center">
-        <% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
+       
         <h2>회원 정보 수정</h2>
         <p class="lead">접속한 회원 ID:<%= info.getId() %></p>
       </div>

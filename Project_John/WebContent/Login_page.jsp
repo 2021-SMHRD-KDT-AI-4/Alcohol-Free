@@ -1,3 +1,4 @@
+<%@page import="Cocktail.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
     </head>
     <body>
         <br>
-
+ <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
               <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
@@ -39,12 +40,21 @@
                   <li class="nav-item">
                     <a class="nav-link" href="Community.jsp">Community</a>
                   </li>
+                    <%if(info!= null) {%>
+                 
                   <li class="nav-item">
-                    <a class="nav-link" href="Login_Service">Login</a>
+                    <a class="nav-link" href="LogoutService">Logout</a>
                   </li>
-                  <li class="nav-item">
+                   <li class="nav-item">
                     <a class="nav-link" href="My_page.jsp">Mypage</a>
                   </li>
+                   <%}else{ %>
+                   <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                   
+                  <%} %>
+                 
                 </ul>
                 
                 </div>

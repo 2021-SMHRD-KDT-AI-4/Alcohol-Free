@@ -1,3 +1,8 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Cocktail.WishlistDTO"%>
+<%@page import="Cocktail.WishlistDAO"%>
+<%@page import="Cocktail.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -25,7 +30,7 @@
   </head>
   <body>
         <br>
-
+ <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid">
             <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
@@ -43,27 +48,45 @@
                 <li class="nav-item">
                   <a class="nav-link" href="Community,jsp">Community</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Login_page.jsp">Login</a>
-                </li>
-                <li class="nav-item">
+                 <%if(info!= null) {%>
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="LogoutService">Logout</a>
+                  </li>
+                  <li class="nav-item">
                   <a class="nav-link" href="My_page.jsp">Mypage</a>
                 </li>
+                   <%}else{ %>
+                   <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                   
+                  <%} %>
+                
               </ul>
               
               </div>
           </div>
       </nav>
-
+<% 
+	    
+		WishlistDAO wdao = new WishlistDAO();
+		WishlistDTO wdto = new WishlistDTO(info.getId());
+		String user_id =info.getId();
+		System.out.print(user_id);
+		
+		%>
+		
       
       <div id="cock" class="form-group">
-          <h1>리뷰 작성</h1>
+          <h1><%=user_id %>님의 리뷰 작성</h1>
           <br>
           <br>
           <form action="Review_Service" method="post" enctype="multipart/form-data">
           <p class="lead" style="text-align: center;">추천 받은 칵테일은 어떠셨나요?</p>
           <p class="lead">리뷰 제목</p>
           <input type="text" class="form-control" id="TITLE" name="TITLE">
+          <input type="hidden" class="form-control" value="<%=user_id %>" name="user_id" id="user_id">
           <br>
           <p class="lead">사진 업로드</p>
           <div class="filebox"> 
@@ -79,7 +102,7 @@
           <textarea class="form-control" id="REVIEW" name="CONTENT"></textarea>
           <div id="test_cnt">(0 / 200)</div>
           <br>
-          <input type="submit" class="btn btn-light" value="리뷰작성" style="width: 500px;" onclick="community_insult()">
+          <input type="submit" class="btn btn-light" value="리뷰작성" style="width: 500px;">
 			</form>
       </div>
 
@@ -106,12 +129,12 @@
                       $(this).siblings('.upload-name').val(filename); 
                   });
               }); 
-          function community_insult(){
-        	  
+   /*         function community_insult(){
+        	  var user_id = $('#user_id')val();   
   			$.ajax({
   				type : "post",  //데이터 전송 방식 
-  				data : {"text" : "call"}, //서버로 보내는 값 
-  				url : "communityService", // 서버 파일 이름 
+  				data : {"user_id" : user_id}, //서버로 보내는 값 
+  				url : "Review_Service", // 서버 파일 이름 
   				dataType : "text", // 서버에서 오는 응답방식  
   				success : function(data){
   					alert(data);					
@@ -120,8 +143,8 @@
   					alert("실패!");
   				}
   			})
-  		}
-
+  		} */
+ 
               
           </script>
     </body>

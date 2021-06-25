@@ -1,3 +1,4 @@
+<%@page import="Cocktail.MemberDTO"%>
 <%@page import="Cocktail.CommunityDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Cocktail.CommunityDAO"%>
@@ -35,7 +36,7 @@
     </head>
     <body>
         <br>
-
+<% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
             <div class="container-fluid">
               <a class="navbar-brand" href="Main_page.jsp" style="font-family: COOKIERUN; font-size: 70px; ">MOODTAIL</a>
@@ -53,12 +54,21 @@
                   <li class="nav-item">
                     <a class="nav-link" href="Community.jsp">Community</a>
                   </li>
+                   <%if(info!= null) {%>
+                 
                   <li class="nav-item">
-                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                    <a class="nav-link" href="LogoutService">Logout</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="My_page.jsp">Mypage</a>
                   </li>
+                   <%}else{ %>
+                   <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                   
+                  <%} %>
+                  
                 </ul>
                 
               </div>
@@ -87,10 +97,10 @@
                     <tr>
                         <td width="20%"><span id="board_num"><%=i+1%></span></td>
                         
-                        <td ><%= clist.get(i).getUser_ID()%>님의 리뷰</td>
+                        <td >제목 : <%= clist.get(i).getTITLE()%></td>
                     </tr>
                     <tr >
-                        <td colspan="2" ><img  src="<%=clist.get(i).getUser_IMG()%>"></td>
+                        <td colspan="2" ><img  src="img/<%=clist.get(i).getUser_IMG()%>"></td>
                     </tr>
                     <tr >
                         <td colspan="2" ><%=clist.get(i).getPost()%></td>
@@ -147,41 +157,45 @@
    }
    
    function like(){
-      if($('#like_btn').val()=="♥"){
-         $.ajax({
-            type : "post",
-            data : {
-               "board_num" : $('#board_num').html()
-            },
-            url : "Like_Service",
-            dataType : "text",
-            success : function(data){
-               
-               $('#like_result').html(data);
-               $('#like_btn').val('♡ ');
-            },
-            error : function(){
-               alert('실패!');
-            }
-         });
-      }else{
-         $.ajax({
-            type : "post",
-            data : {
-               "board_num" : $('#board_num').html()
-            },
-            url : "DisLike_Service",
-            dataType : "text",
-            success : function(data){
-               
-               $('#like_result').html(data);
-               $('#like_btn').val('♥');
-            },
-            error : function(){
-               alert('실패!');
-            }
-         });
-      }
+	   
+
+		      if($('#like_btn').val()=="♥"){
+		         $.ajax({
+		            type : "post",
+		            data : {
+		               "board_num" : $('#board_num').html()
+		            },
+		            url : "Like_Service",
+		            dataType : "text",
+		            success : function(data){
+		               
+		               $('#like_result').html(data);
+		               $('#like_btn').val('♡ ');
+		            },
+		            error : function(){
+		               alert('실패!');
+		            }
+		         });
+		      }else{
+		         $.ajax({
+		            type : "post",
+		            data : {
+		               "board_num" : $('#board_num').html()
+		            },
+		            url : "DisLike_Service",
+		            dataType : "text",
+		            success : function(data){
+		               
+		               $('#like_result').html(data);
+		               $('#like_btn').val('♥');
+		            },
+		            error : function(){
+		               alert('실패!');
+		            }
+		         });
+		      }
+		
+	
    }
    
 //   var data2 = [];
