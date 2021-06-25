@@ -77,7 +77,7 @@
             <br>
              <%}%>
              <br>
-            <input type="submit" class="btn btn-light text-dark " value="오늘 나에게 어울리는 칵테일 보기" style="margin-left: 1000px; width: 900px; height: 100px; font-family: COOKIERUN; margin-bottom: 250px; font-size: 50px">
+            <input type="submit" class="btn btn-light text-dark" value="오늘 나에게 어울리는 칵테일 보기" style="margin-left: 1000px; width: 900px; height: 100px; font-family: COOKIERUN; margin-bottom: 250px; font-size: 50px">
            
             </p>
         </form>

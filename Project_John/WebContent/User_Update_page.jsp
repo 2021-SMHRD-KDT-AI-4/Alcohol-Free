@@ -21,39 +21,47 @@
           margin-top: 11%;
           margin-bottom: 11%;
       }
+      div.container-fluid {
+          height: 50px;
+      }
+      div#navbarColor01{
+          float: right;
+          text-align: right;
+          font-family: COOKIERUN;
+      }      
     </style>
   </head>
   <body class="bg-light">
     <br>
 
-     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="Main_page.jsp">Home
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Community.jsp">Community</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Login_page.jsp">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="My_page.jsp">Mypage</a>
-              </li>
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Main_page.jsp" style="font-family: COOKIERUN; font-size: 70px;">MOODTAIL</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor01" style="float: right;">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Main_page.jsp">Home
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Community.jsp">Community</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="My_page.jsp">Mypage</a>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
 
   <div class="container">
     <main>
@@ -95,7 +103,7 @@
                   </select>
                 </div>
 
-            <input class="w-100 btn btn-primary btn-lg" type="submit" value="정보 수정 완료">
+            <input class="btn btn-light text-dark" type="submit" value="정보 수정 완료">
           </div>
           </form>
           </div>
