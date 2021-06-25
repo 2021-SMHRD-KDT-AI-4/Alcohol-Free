@@ -1,3 +1,8 @@
+<%@page import="Cocktail.CocktailDTO"%>
+<%@page import="Cocktail.CocktailDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Cocktail.WishlistDTO"%>
+<%@page import="Cocktail.WishlistDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@page import="Cocktail.MemberDTO"%>
@@ -62,6 +67,10 @@
 		
 		<% 
 	    MemberDTO info = (MemberDTO)session.getAttribute("info"); 
+		WishlistDAO wdao = new WishlistDAO();
+		WishlistDTO wdto = new WishlistDTO(info.getId());
+		ArrayList<WishlistDTO> list = wdao.wishlist(wdto);
+		
 		%>
 		
 		
@@ -88,32 +97,45 @@
 
         <div class="container">
 		<h3 class="fw-light">찜목록 </h3>
-          <input class="btn btn-light" id="like_btn" type="button" value="찜목록 보기" style="width: 150px" onclick="location.href='Recommend_Result_page.jsp'">
+          
           <input class="btn btn-light" id="like_btn" type="button" value="리뷰 작성" style="width: 150px" onclick="location.href='Review.jsp'">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          
+          <% if(info!= null){
+          for(int i=0; i<list.size(); i++){
+          CocktailDAO dao = new CocktailDAO();
+		  CocktailDTO cinfo = dao.C_Info(list.get(i).getCocktail_ID());
+		  %>
             <div class="col">
               <div class="card shadow-sm">
-                <img src="./C_IMG/margarita.png">
+                <img src="<%=cinfo.getCocktail_IMG()%>">
                 <div class="card-body">
-                  <p class="card-text">칵테일이름</p>
-                  <p class="card-text">"내가 남긴 한줄문구"</p>
+                  <p class="card-text"><%=list.get(i).getCocktail_ID() %></p>
+                  <p class="card-text"><%=list.get(i).getA_1() %></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     <form action="Recommend_Result_page.jsp">
-                      <input type="submit" class="btn btn-sm btn-outline-secondary" value="더보기">
+                     <input  type="submit" class="btn btn-sm btn-outline-secondary" value="더보기" >                
                     </form>
+                    
                     </div>
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
+            <%}}%> 
           </div>
         </div>
     </main>
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+   
+	
+   
 
+	
+
+	</script>
+      
       
   </body>
 </html>

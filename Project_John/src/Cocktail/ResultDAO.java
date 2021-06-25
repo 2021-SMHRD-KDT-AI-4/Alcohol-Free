@@ -44,4 +44,34 @@ public class ResultDAO {
 		e.printStackTrace();
 		}
 	}
+public int result_insert(ResultDTO rdto) {
+		
+		int cnt = 0;
+		
+		try {
+			getConnection();
+			
+			String sql = "INSERT INTO RESULT VALUES(R_NUM.NEXTVAL,?,?,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, rdto.getUser_ID());
+			psmt.setString(2, rdto.getA_1());
+			psmt.setString(3, rdto.getCocktail_id());
+			
+			
+			cnt = psmt.executeUpdate();
+			
+			if(cnt > 0){
+				System.out.println("결과값 넣기 성공");
+			}else{
+				System.out.println("결과값 넣기실패");
+			}
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			getClose();
+		}
+		return cnt;
+	}
+	
 }

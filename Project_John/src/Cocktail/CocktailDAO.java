@@ -69,33 +69,33 @@ public class CocktailDAO {
 			return cnt;
 		}
 		
-		public CocktailDTO C_Info(String id) {
+		public CocktailDTO C_Info(String result) {
 			
-			ResultDTO dto = null;
+		CocktailDTO cinfo = null;
 			
 			try {
 				getConnection();
-//				String sql = "SELECT cocktail_IMG Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL WHERE Cocktail_ID = (SELECT Cocktail_ID FROM RESULT)";
-				String sql = "SELECT cocktail_IMG, c.Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL c, result r WHERE c.Cocktail_ID = r.Cocktail_ID and r.A_1 = '?'";
+//				
+				String sql = "SELECT * FROM COCKTAIL WHERE COCKTAIL_ID =?";
 				
 				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, dto.getA_1());
+				psmt.setString(1, result);
 				
 				rs = psmt.executeQuery();
 				
 				while(rs.next()) {
-					String cocktail_IMG = rs.getString(1);
-					String Cocktail_ID = rs.getString(2);
-					String Emotional_Len = rs.getString(3);
-					int alc_Vol = rs.getInt(4);
-					String base = rs.getString(5);
-					String flavor = rs.getString(6);
-					String ingredient = rs.getString(7);
-					String recipe = rs.getString(8);
-					String cocktail_his = rs.getString(9);
+					String cocktail_id = rs.getString(1);
+					int alc_Vol = rs.getInt(2);
+					String ingredient = rs.getString(3);
+					String recipe = rs.getString(4);
+					String cocktail_his = rs.getString(5);
+					String base = rs.getString(6);
+					String flavor = rs.getString(7);
+					String  cocktail_IMG = rs.getString(8);
+					String emotional_len = rs.getString(9);
 											
-					cinfo = new CocktailDTO(cocktail_IMG, Cocktail_ID, Emotional_Len, alc_Vol, base, flavor, ingredient, recipe, cocktail_his);
-							
+				 cinfo=new CocktailDTO(cocktail_id, cocktail_his, cocktail_IMG, recipe, alc_Vol, emotional_len, base, flavor, ingredient);
+				     
 				}		
 			}catch (SQLException e) {
 				e.printStackTrace();

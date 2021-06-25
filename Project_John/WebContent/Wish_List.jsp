@@ -1,8 +1,3 @@
-<%@page import="Cocktail.WishlistDTO"%>
-<%@page import="Cocktail.WishlistDAO"%>
-<%@page import="Cocktail.CocktailDAO"%>
-<%@page import="Cocktail.ResultDTO"%>
-<%@page import="Cocktail.ResultDAO"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -18,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>TODAY COCKTAIL</title>
+    <title>COCKTAIL_Info</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
 
@@ -33,15 +28,10 @@
       h1{
         text-align: center;
         }
-      #wish_btn{
-      	position: fixed;
-      	top:200px;
-	    right:0px;
-      }
     </style>
   </head>
   <body>
-		
+      
     <br>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -72,52 +62,21 @@
             </div>
         </div>
     </nav>
- <%String pre = request.getParameter("data");
-  
- String[] split_pre =pre.split("/");  
- String a1 = split_pre[1];
-   String [] b1 = a1.split(",");
-   String user_id = b1[0];
-   String b2 = b1[1];
-   String [] c1 = b2.split("z");
-   String a_1 = c1[0];
-   String c2 = c1[1];
-   String [] d1 = c2.split("N");
-   String result1 = d1[0];
-   
-   String result = result1.trim();
-   System.out.println(user_id);
-   System.out.println(a_1);
-   System.out.println(result);  
-   ResultDAO rdao = new ResultDAO();
-   ResultDTO rdto = new ResultDTO(user_id,a_1,result);
-   int cnt = rdao.result_insert(rdto);
-   
-   CocktailDAO dao = new CocktailDAO();   
-   CocktailDTO cinfo = dao.C_Info(result);
-   
-   WishlistDAO wdao = new WishlistDAO();
-   WishlistDTO wdto = new WishlistDTO(user_id,a_1,result);
-   
-   
-%>
+
 
     <main>
-    <form action="Wishlist_Service">   
-     <input  id="user_id" type="hidden" value="<%=user_id%>" style="width: 150px">
-     <input  id="a_1" type="hidden" value="<%=a_1%>" style="width: 150px" >
-     <input  id="cocktail_id" type="hidden" value="<%=cinfo.getCocktail_id()%>" style="width: 150px" >
-     </form>
-      <input class="btn btn-light" id="wish_btn" type="button" value="찜하기" style="width: 150px" onclick="wishlist()">
         <div class="container py-4">
             
-			
+         <div class="c">
+            <h3 class="fw-light">추천 결과 보기 </h3>
+            <input class="btn btn-light" id="wish_info" type="button" value="추천 결과 보기" style="width: 150px;" onclick="wish_info()">
+         </div>
             <div class="row align-items-md-stretch" style="margin-top: 148px;">
               <div class="col-md-6">
                   <div style="margin-top: 20px;">
                 <div class="card-header"></div>
                     <div class="card-body" id="cimg">
-                     <img src="<%=cinfo.getCocktail_IMG()%>"> 
+                        
                     </div>
                 </div>
               </div>
@@ -128,10 +87,10 @@
                 <br>
                 <br>
                     <div class="card-body">
-                        <h4 class="card-title" ><%=cinfo.getCocktail_id() %></h4>
+                        <h4 class="card-title">칵테일 이름</h4>
                         <p class="card-text" id="cname"></p>
                         <br>
-                        <h4 class="card-title"><%=cinfo.getEmotional_len() %></h4>
+                        <h4 class="card-title">한줄 문구</h4>
                         <p class="card-text" id="crecomend"></p>
                     </div>
                 </div>
@@ -153,11 +112,11 @@
             <div class="card-header"><h2>칵테일 정보</h2></div>
                 <div class="card-body">
                     <h4 class="card-title">도수</h4>
-                    <p class="card-text" id="avol"><%=cinfo.getAlc_Vol() %></p>
+                    <p class="card-text" id="avol"></p>
                     <h4 class="card-title">베이스</h4>
-                    <p class="card-text" id="base"><%=cinfo.getBase() %></p>
+                    <p class="card-text" id="base"></p>
                     <h4 class="card-title">맛</h4>
-                    <p class="card-text" id="flavor"><%=cinfo.getFlavor() %></p>
+                    <p class="card-text" id="flavor"></p>
                 </div>
             </div>
           </div>
@@ -166,9 +125,9 @@
             <div class="card-header"><h2>칵테일 레시피</h2></div>
                 <div class="card-body">
                     <h4 class="card-title">재료</h4>
-                    <p class="card-text" id="ci"><%=cinfo.getIngredient() %></p>
+                    <p class="card-text" id="ci"></p>
                     <h4 class="card-title">레시피</h4>
-                    <p class="card-text" id="rec"><%=cinfo.getRecipe() %></p>
+                    <p class="card-text" id="rec"></p>
                     
                 </div>
             </div>
@@ -177,47 +136,51 @@
         <div class="card bg-light mb-3">
             <div class="container-fluid py-5 text-primary">
               <h2 class="display-5 fw-bold">유래</h2>
-              <p class="col-md-8 fs-4" id="his"><%=cinfo.getCocktail_his() %></p>
+              <p class="col-md-8 fs-4" id="his"></p>
 
             </div>
           </div>
-		</div>
-	</div>
-	</main>
+      </div>
+   </div>
+   </main>
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.6.0.min.js"></script>
-	<script>
-
-	 function wishlist(){
-		  var user_id = $("#user_id").val();
-		  var cocktail_id = $("#cocktail_id").val();
-		  var a_1 = $("#a_1").val();
-		$.ajax({
-			type : "post",  //데이터 전송 방식 
-			data :  {"cocktail_id":cocktail_id,
-				"user_id":user_id,
-				"a_1":a_1} ,
-			url : "Wishlist_Service", // 서버 파일 이름 
-			dataType : "text", // 서버에서 오는 응답방식  
-			success : function(data){
-				alert("찜되었습니다!");					
-			},
-			error :function(){
-				alert("실패!");
-			}
-		})
-	}
-	
+   <script>
+   var data2 = [];
+   /* 버튼 눌렀을 때 실행될 함수 */
+   function wish_info(){
+       $.ajax({
+             url : 'Wish_List', /* 데이터를 가지고 올 서블릿, JSP 등 주소 */
+             success : function(data){
+                console.log()
+                console.log(data);
+                console.log(data[cocktail_id]);
+//                $('div#cimg').append("<img src=" +  +">");
+                $('p#cname').append("<p>"+ data.alc_Vol +"</p>" );
+/*                 $('p#crecomend').append("<p>"+ JLEN +"</p>");
+                $('p#avol').append("<p>"+ JVOL +"</p>");
+                $('p#base').append("<p>"+ JBASE +"</p>");
+                $('p#flavor').append("<p>"+ JFLAVOR +"</p>");
+                $('p#ci').append("<p>"+ JINGREDIENT +"</p>");
+                $('p#rec').append("<p>"+ JREC +"</p>");
+                $('p#his').append("<p>"+ JHIS +"</p>");  */
+             },
+               error : function(){
+                  alert("실패");
+               }
+           });
+   }
    
-/* 	$('#Recomend').on('click', function(){
+   
+/*    $('#Recomend').on('click', function(){
 
     
-	}); */
-	
+   }); */
+   
 
-	</script>
+   </script>
       
   </body>
 </html>

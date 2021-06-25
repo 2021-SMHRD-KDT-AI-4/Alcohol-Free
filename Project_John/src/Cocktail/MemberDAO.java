@@ -62,7 +62,7 @@ public class MemberDAO {
 			psmt.setInt(5, dto.getAge());
 			psmt.setString(6, dto.getAlcohol_type());
 			psmt.setInt(7, dto.getAlcohol_capacity());
-			psmt.setString(8, dto.getFlavor());
+			psmt.setString(8, dto.getFavotite_Flavor());
 			
 			cnt = psmt.executeUpdate();
 			
@@ -121,12 +121,12 @@ public class MemberDAO {
 		try {
 			getConnection();
 		
-			String sql = "UPDATE W_USER SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ? FLAVOR = ? WHERE User_ID = ? AND USER_PW = ?";
+			String sql = "UPDATE W_USER SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ?, FLAVOR = ? WHERE User_ID = ? AND USER_PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
 			psmt.setString(2, dto.getAlcohol_type());
 			psmt.setInt(3, dto.getAlcohol_capacity());
-			psmt.setString(4, dto.getFlavor());
+			psmt.setString(4, dto.getFavotite_Flavor());
 			psmt.setNString(5, dto.getId());
 			psmt.setNString(6, dto.getPw());
 			

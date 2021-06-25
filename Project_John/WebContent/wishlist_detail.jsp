@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>TODAY COCKTAIL</title>
+    <title>MYPAGE COCKTAIL</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
 
@@ -72,43 +72,16 @@
             </div>
         </div>
     </nav>
- <%String pre = request.getParameter("data");
+ <%
+    String cocktail_id = request.getParameter("cocktail_id");
+	response.setContentType("text/html;");
+	CocktailDAO dao = new CocktailDAO();
+	CocktailDTO cinfo = dao.C_Info(cocktail_id);
   
- String[] split_pre =pre.split("/");  
- String a1 = split_pre[1];
-   String [] b1 = a1.split(",");
-   String user_id = b1[0];
-   String b2 = b1[1];
-   String [] c1 = b2.split("z");
-   String a_1 = c1[0];
-   String c2 = c1[1];
-   String [] d1 = c2.split("N");
-   String result1 = d1[0];
-   
-   String result = result1.trim();
-   System.out.println(user_id);
-   System.out.println(a_1);
-   System.out.println(result);  
-   ResultDAO rdao = new ResultDAO();
-   ResultDTO rdto = new ResultDTO(user_id,a_1,result);
-   int cnt = rdao.result_insert(rdto);
-   
-   CocktailDAO dao = new CocktailDAO();   
-   CocktailDTO cinfo = dao.C_Info(result);
-   
-   WishlistDAO wdao = new WishlistDAO();
-   WishlistDTO wdto = new WishlistDTO(user_id,a_1,result);
-   
-   
 %>
 
     <main>
-    <form action="Wishlist_Service">   
-     <input  id="user_id" type="hidden" value="<%=user_id%>" style="width: 150px">
-     <input  id="a_1" type="hidden" value="<%=a_1%>" style="width: 150px" >
-     <input  id="cocktail_id" type="hidden" value="<%=cinfo.getCocktail_id()%>" style="width: 150px" >
-     </form>
-      <input class="btn btn-light" id="wish_btn" type="button" value="찜하기" style="width: 150px" onclick="wishlist()">
+    
         <div class="container py-4">
             
 			
@@ -188,36 +161,6 @@
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.6.0.min.js"></script>
-	<script>
-
-	 function wishlist(){
-		  var user_id = $("#user_id").val();
-		  var cocktail_id = $("#cocktail_id").val();
-		  var a_1 = $("#a_1").val();
-		$.ajax({
-			type : "post",  //데이터 전송 방식 
-			data :  {"cocktail_id":cocktail_id,
-				"user_id":user_id,
-				"a_1":a_1} ,
-			url : "Wishlist_Service", // 서버 파일 이름 
-			dataType : "text", // 서버에서 오는 응답방식  
-			success : function(data){
-				alert("찜되었습니다!");					
-			},
-			error :function(){
-				alert("실패!");
-			}
-		})
-	}
 	
-   
-/* 	$('#Recomend').on('click', function(){
-
-    
-	}); */
-	
-
-	</script>
-      
   </body>
 </html>

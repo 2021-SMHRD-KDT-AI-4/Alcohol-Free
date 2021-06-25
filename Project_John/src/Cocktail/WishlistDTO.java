@@ -12,7 +12,24 @@ public class WishlistDTO {
 		this.cocktail_ID = cocktail_ID;
 		this.w_Num = w_Num;
 		this.a_1 = a_1;
+		
+		
 	}
+	
+
+	public WishlistDTO(String user_ID, String cocktail_ID, String a_1) {
+		super();
+		this.user_ID = user_ID;
+		this.cocktail_ID = cocktail_ID;
+		this.a_1 = a_1;
+	}
+
+
+	public WishlistDTO(String user_ID) {
+		super();
+		this.user_ID = user_ID;
+	}
+
 
 	public String getUser_ID() {
 		return user_ID;

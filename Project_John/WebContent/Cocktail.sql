@@ -10,7 +10,7 @@ select * from tabs;
 
 SELECT cocktail_IMG, c.Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL c, result r WHERE c.Cocktail_ID = r.Cocktail_ID and r.A_1 = '아 왜 안들어가냐' 
 
-SELECT * FROM RESULT
+SELECT * FROM w_user;
 
 DROP TABLE W_USER;
 
@@ -25,7 +25,7 @@ CREATE TABLE W_USER(
 	Favotite_Flavor varchar2(50)
 )
 
-select * from W_USER;
+select * from Wi;
 
 insert into W_USER values('abc', '123456', 'hola', '여자', 20, '위스키', 2, '단맛')
 

@@ -8,10 +8,10 @@ public class MemberDTO {
 	private int age;
 	private String alcohol_type;
 	private int alcohol_capacity;
-	private String flavor;
+	private String Favotite_Flavor;
 	
 	public MemberDTO(String id, String pw, String name, String gender, int age, String alcohol_type, int alcohol_capacity,
-			 String flavor) {
+			 String Favotite_Flavor) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -20,7 +20,7 @@ public class MemberDTO {
 		this.age = age;
 		this.alcohol_type = alcohol_type;
 		this.alcohol_capacity = alcohol_capacity;
-		this.flavor = flavor;
+		this.Favotite_Flavor = Favotite_Flavor;
 	}
 
 	public MemberDTO(String id, String pw) {
@@ -30,13 +30,13 @@ public class MemberDTO {
 	}
 	
 	
-	public MemberDTO(String id, String pw, String alcohol_type, int alcohol_capacity, String flavor) {
+	public MemberDTO(String id, String pw, String alcohol_type, int alcohol_capacity, String Favotite_Flavor) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.alcohol_type = alcohol_type;
 		this.alcohol_capacity = alcohol_capacity;
-		this.flavor = flavor;
+		this.Favotite_Flavor = Favotite_Flavor;
 	}
 
 	public String getId() {
@@ -95,12 +95,12 @@ public class MemberDTO {
 		this.alcohol_type = alcohol_type;
 	}
 
-	public String getFlavor() {
-		return flavor;
+	public String getFavotite_Flavor() {
+		return Favotite_Flavor;
 	}
 
-	public void setFlavor(String flavor) {
-		this.flavor = flavor;
+	public void setFavotite_Flavor(String Favotite_Flavor) {
+		this.Favotite_Flavor = Favotite_Flavor;
 	}
 	
 	
