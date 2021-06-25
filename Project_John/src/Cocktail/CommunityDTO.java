@@ -4,24 +4,73 @@ public class CommunityDTO {
 	private String user_ID;
 	private String user_IMG;
 	private int post_Num;
+	private String post;
 	private int like_Cnt;
 	private int comment_Num;
 	private String comments;
 	private int write_Date;
-	private int num;
+	private String TITLE;
 	
-	public CommunityDTO(String user_ID, String user_IMG, int post_Num, int like_Cnt, int comment_Num, String comments,
-			int write_Date, int num) {
+	
+	
+
+	
+
+	
+
+
+
+	public CommunityDTO(String user_ID, String user_IMG, String post, int like_Cnt, String comments, String TITLE) {
+		super();
+		this.user_ID = user_ID;
+		this.user_IMG = user_IMG;
+		this.post = post;
+		this.like_Cnt = like_Cnt;
+		this.comments = comments;
+		this.TITLE = TITLE;
+	}
+
+
+
+	public CommunityDTO(String user_ID, String user_IMG, int post_Num, String post, int like_Cnt, int comment_Num,
+			String comments, int write_Date, int num, String TITLE) {
 		super();
 		this.user_ID = user_ID;
 		this.user_IMG = user_IMG;
 		this.post_Num = post_Num;
+		this.post = post;
 		this.like_Cnt = like_Cnt;
 		this.comment_Num = comment_Num;
 		this.comments = comments;
 		this.write_Date = write_Date;
-		this.num = num;
+		this.TITLE = TITLE;
 	}
+
+
+
+	public String getTITLE() {
+		return TITLE;
+	}
+
+
+
+	public void setTITLE(String TITLE) {
+		this.TITLE = TITLE;
+	}
+
+
+
+	public String getPost() {
+		return post;
+	}
+
+
+
+	public void setPost(String post) {
+		this.post = post;
+	}
+
+
 
 	public String getUser_ID() {
 		return user_ID;
@@ -79,14 +128,7 @@ public class CommunityDTO {
 		this.write_Date = write_Date;
 	}
 
-	public int getNum() {
-		return num;
-	}
-
-	public void setNum(int num) {
-		this.num = num;
-	}
-
+	
 	
 	
 	

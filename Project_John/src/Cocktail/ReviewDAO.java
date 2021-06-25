@@ -52,7 +52,7 @@ public class ReviewDAO {
 		
 		try {
 	         getConnection();
-	         String sql = "INSERT INTO RR VALUES(?,?,?)";
+	         String sql = "INSERT INTO REVIEW VALUES(?,?,?)";
 	         
 	         psmt = conn.prepareStatement(sql);
 	         psmt.setString(1, dto.getTITLE());

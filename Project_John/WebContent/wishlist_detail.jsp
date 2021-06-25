@@ -1,3 +1,4 @@
+<%@page import="java.net.URLDecoder"%>
 <%@page import="Cocktail.WishlistDTO"%>
 <%@page import="Cocktail.WishlistDAO"%>
 <%@page import="Cocktail.CocktailDAO"%>
@@ -73,7 +74,10 @@
         </div>
     </nav>
  <%
-    String cocktail_id = request.getParameter("cocktail_id");
+ 
+ String cocktail_id = URLDecoder.decode(request.getParameter("cocktail_id"), "euc-kr");
+ 
+ System.out.println("cocktail_id"+cocktail_id);
 	response.setContentType("text/html;");
 	CocktailDAO dao = new CocktailDAO();
 	CocktailDTO cinfo = dao.C_Info(cocktail_id);
@@ -96,12 +100,12 @@
               </div>
               <div class="col-md-6 card border-info mb-3">
                 <div style="margin-top: 20px;">
-                <div class="card-header"><h2>¿À´ÃÀÇ Ä¬Å×ÀÏ</h2></div>
+                <div class="card-header"><h2><%=cinfo.getCocktail_id() %></h2></div>
                 
                 <br>
                 <br>
                     <div class="card-body">
-                        <h4 class="card-title" ><%=cinfo.getCocktail_id() %></h4>
+                        <h4 class="card-title" ></h4>
                         <p class="card-text" id="cname"></p>
                         <br>
                         <h4 class="card-title"><%=cinfo.getEmotional_len() %></h4>

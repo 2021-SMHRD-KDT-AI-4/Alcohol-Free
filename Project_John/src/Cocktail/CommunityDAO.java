@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CommunityDAO {
 	private Connection conn;
@@ -111,6 +112,70 @@ public class CommunityDAO {
 		}
 		return cnt;
 	}
+public int community_insert(CommunityDTO dto) {
+		
+		int cnt = 0;
+		
+		try {
+			getConnection();
+			
+			String sql = "INSERT INTO community VALUES(?,?,Post_Num.NEXTVAL,?,0,Comment_Num.NEXTVAL,'',sysdate,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getUser_ID());
+			psmt.setString(2, dto.getUser_IMG());
+			psmt.setString(3, dto.getPost());			
+			psmt.setString(4, dto.getComments());						
+			psmt.setString(5, dto.getTITLE());
+			
+			cnt = psmt.executeUpdate();
+			
+			if(cnt > 0){
+				System.out.println("커뮤니티 정보 넣기 성공");
+			}else{
+				System.out.println("커뮤니티 정보 넣기 실패");
+			}
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			getClose();
+		}
+		return cnt;
+	}
+    public ArrayList<CommunityDTO> community_contents() {
+	   ArrayList<CommunityDTO> list = new ArrayList<CommunityDTO>();
+	
+		
+		try {
+			getConnection();
+		
+			String sql = "SELECT * FROM COMMUNITY";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String user_ID = rs.getString(1);
+				String user_IMG = rs.getString(2);
+				String post = rs.getString(4);
+				int like_Cnt = rs.getInt(5);
+				String comments = rs.getString(7);
+				String TITLE = rs.getString(9);
+				CommunityDTO cdto=new CommunityDTO(user_ID, user_IMG, post, like_Cnt, comments, TITLE);
+         	    list.add(cdto);
+			     
+			}		
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			getClose();
+		}
+		
+		return list;
+	}
+
 		
 	}
 

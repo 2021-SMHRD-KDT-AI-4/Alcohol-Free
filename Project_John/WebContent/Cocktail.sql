@@ -1,12 +1,12 @@
 DROP TABLE RR;
 
-CREATE TABLE RR(
+CREATE TABLE REVIEW(
    TITLE VARCHAR2(50) NOT NULL,
    INPUT_FILE VARCHAR2(50),
    CONTENT VARCHAR2(1000) NOT NULL
 )
 
-select * from tabs;
+select * from review;
 
 SELECT cocktail_IMG, c.Cocktail_ID, Emotional_Len, Alc_Vol, Flavor, Base, Recipe,Ingredient,Cocktail_HIS FROM COCKTAIL c, result r WHERE c.Cocktail_ID = r.Cocktail_ID and r.A_1 = '아 왜 안들어가냐' 
 
@@ -79,7 +79,11 @@ CREATE TABLE COMMUNITY(
 	Write_Date DATE,
 	NUM number
 )
+ALTER TABLE COMMUNITY DROP COLUMN NUM;
+ALTER TABLE COMMUNITY ADD(TITLE VARCHAR2(50)); 
 
+출처: https://jwklife.tistory.com/5 [인 생]
+출처: https://jwklife.tistory.com/5 [인 생]
 INSERT INTO COMMUNITY VALUES('abc', './C_IMG/margarita.png', Post_Num.NEXTVAL, '마가리타 존맛', 1, Comment_Num.NEXTVAL, '',sysdate, 1);
 
 SELECT * FROM COMMUNITY

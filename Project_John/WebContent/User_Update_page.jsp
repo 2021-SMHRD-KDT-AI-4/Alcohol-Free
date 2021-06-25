@@ -87,11 +87,11 @@
               <div class="col-12">
                   <label for="flavor" class="form-label">¼±È£ÇÏ´Â ¸À</label>
                   <select class="form-select" id="FLAVOR" name="FLAVOR" required>
-                    <option value="Sweet">´Ü¸À</option>
-                    <option value="Strong">µ¶ÇÑ¸À</option>
-                    <option value="Minty">»óÄèÇÑ¸À</option>
-                    <option value="Sour">½Å¸À</option>
-                    <option value="Bitter">¾´¸À</option>
+                    <option value="´Ü¸À">´Ü¸À</option>
+                    <option value="¾à°£ ´Ü¸À">¾à°£ ´Ü¸À</option>
+                    <option value="»óÄèÇÑ ¸À">»óÄèÇÑ ¸À</option>
+                    <option value="½Å¸À">½Å¸À</option>
+                    <option value="¾à°£ µ¶ÇÑ¸À">¾à°£ µ¶ÇÑ¸À</option>
                   </select>
                 </div>
 

@@ -1,3 +1,4 @@
+<%@page import="java.net.URLDecoder"%>
 <%@page import="Cocktail.WishlistDTO"%>
 <%@page import="Cocktail.WishlistDAO"%>
 <%@page import="Cocktail.CocktailDAO"%>
@@ -38,6 +39,10 @@
       	top:200px;
 	    right:0px;
       }
+      div#d4{
+      	text-align: center;
+      }
+      
     </style>
   </head>
   <body>
@@ -72,7 +77,10 @@
             </div>
         </div>
     </nav>
- <%String pre = request.getParameter("data");
+ <%
+ 
+ String pre = request.getParameter("data");
+ 
   
  String[] split_pre =pre.split("/");  
  String a1 = split_pre[1];
@@ -175,10 +183,11 @@
         </div>
 
         <div class="card bg-light mb-3">
-            <div class="container-fluid py-5 text-primary">
+            <div class="container-fluid py-5 text-primary" >
               <h2 class="display-5 fw-bold">À¯·¡</h2>
-              <p class="col-md-8 fs-4" id="his"><%=cinfo.getCocktail_his() %></p>
-
+              <div id="d4">
+              <p class="col-md-8 fs-4" id="his" style="margin-left: 15%"><%=cinfo.getCocktail_his() %></p>
+			</div>
             </div>
           </div>
 		</div>

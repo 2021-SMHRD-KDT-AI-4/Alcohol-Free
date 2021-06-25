@@ -69,7 +69,7 @@
           <div class="filebox"> 
           <input class="upload-name" value="파일선택" disabled="disabled"> 
           <label class="btn btn-light" for="input-file">
-              사진 첨부
+                    사진 첨부
           </label>
           <input type="file" class="upload-name" name="INPUT_FILE" id="input-file" style="display: none;" accept="image/*">
           </div>
@@ -79,7 +79,7 @@
           <textarea class="form-control" id="REVIEW" name="CONTENT"></textarea>
           <div id="test_cnt">(0 / 200)</div>
           <br>
-          <input type="submit" class="btn btn-light" value="리뷰작성" style="width: 500px;">
+          <input type="submit" class="btn btn-light" value="리뷰작성" style="width: 500px;" onclick="community_insult()">
 			</form>
       </div>
 
@@ -106,6 +106,21 @@
                       $(this).siblings('.upload-name').val(filename); 
                   });
               }); 
+          function community_insult(){
+        	  
+  			$.ajax({
+  				type : "post",  //데이터 전송 방식 
+  				data : {"text" : "call"}, //서버로 보내는 값 
+  				url : "communityService", // 서버 파일 이름 
+  				dataType : "text", // 서버에서 오는 응답방식  
+  				success : function(data){
+  					alert(data);					
+  				},
+  				error :function(){
+  					alert("실패!");
+  				}
+  			})
+  		}
 
               
           </script>

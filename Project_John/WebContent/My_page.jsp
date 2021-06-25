@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="Cocktail.CocktailDTO"%>
 <%@page import="Cocktail.CocktailDAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -104,6 +105,9 @@
           for(int i=0; i<list.size(); i++){
           CocktailDAO dao = new CocktailDAO();
 		  CocktailDTO cinfo = dao.C_Info(list.get(i).getCocktail_ID());
+		  
+		  String cocktail_id_en = URLEncoder.encode(list.get(i).getCocktail_ID(), "euc-kr");
+		  
 		  %>
             <div class="col">
               <div class="card shadow-sm">
@@ -113,7 +117,8 @@
                   <p class="card-text"><%=list.get(i).getA_1() %></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <form action="Recommend_Result_page.jsp">
+                    <form action="wishlist_detail.jsp">
+                    	<input type="hidden" value="<%=cocktail_id_en %>" name="cocktail_id">
                      <input  type="submit" class="btn btn-sm btn-outline-secondary" value="´õº¸±â" >                
                     </form>
                     

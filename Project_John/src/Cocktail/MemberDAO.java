@@ -121,7 +121,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 		
-			String sql = "UPDATE W_USER SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ?, FLAVOR = ? WHERE User_ID = ? AND USER_PW = ?";
+			String sql = "UPDATE W_USER SET User_PW = ?, Alcohol_type = ?, Alcohol_capacity = ?, FAVOTITE_FLAVOR = ? WHERE User_ID = ? AND USER_PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
 			psmt.setString(2, dto.getAlcohol_type());

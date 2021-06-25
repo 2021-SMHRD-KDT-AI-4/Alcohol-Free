@@ -81,7 +81,7 @@ public int wish_insert(WishlistDTO wdto) {
 		
 		try {
 			getConnection();
-//			
+		
 			String sql = "SELECT * FROM WISHLIST WHERE USER_ID =?";
 			
 			psmt = conn.prepareStatement(sql);

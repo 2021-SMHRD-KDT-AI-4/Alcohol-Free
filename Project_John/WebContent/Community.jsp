@@ -1,3 +1,6 @@
+<%@page import="Cocktail.CommunityDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Cocktail.CommunityDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!doctype html>
@@ -16,39 +19,51 @@
         h1{
             text-align: center;
         }
-    </style>
-
-<body>
-    <br>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="Main_page.jsp">Home
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Community.jsp">Community</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Login_page.jsp">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="My_page.jsp">Mypage</a>
-              </li>
-            </ul>
+        div#d1{
+        	margin-left: 10px;
+        }
+    div.container-fluid {
+                height: 50px;
+            }
+            div#navbarColor01{
+            	float: right;
+            	text-align: right;
+            	font-family: COOKIERUN;
+            }
             
+        </style>
+    </head>
+    <body>
+        <br>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Main_page.jsp" style="font-family: COOKIERUN; font-size: 70px; ">MOODTAIL</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor01" style="float: right;">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Main_page.jsp">Home
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Community.jsp">Community</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="My_page.jsp">Mypage</a>
+                  </li>
+                </ul>
+                
+              </div>
             </div>
-        </div>
-    </nav>
+          </nav>
 
 
     <br>
@@ -57,29 +72,34 @@
     <h1>사용자 리뷰 보기</h1>
     
     <br>
+<% CommunityDAO cdao = new CommunityDAO(); 
+   ArrayList<CommunityDTO> clist = cdao.community_contents();
+   
 
-    <div class="container py-4" style="margin: auto;">
+%>
+    <div id="d1" class="container py-4" style="margin: auto;">
         <div class="row mb-2">
+        <% for(int i=0; i<clist.size(); i++){ %>
             <div class="col-md-6 card border-info mb-3" style="width: 45%;">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                 <table>
                     <tr>
-                        <td width="20%"><span id="board_num">1</span></td>
+                        <td width="20%"><span id="board_num"><%=i+1%></span></td>
                         
-                        <td >누구님의 리뷰</td>
+                        <td ><%= clist.get(i).getUser_ID()%>님의 리뷰</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >이미지</td>
+                        <td colspan="2" ><img  src="<%=clist.get(i).getUser_IMG()%>"></td>
                     </tr>
                     <tr >
-                        <td colspan="2" >리뷰내용</td>
+                        <td colspan="2" ><%=clist.get(i).getPost()%></td>
                     </tr>
                     <tr>
                         <td width="250" align="right" colspan="2">
                         	
-                        	<span id="like_result"></span>
-                            <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
+                        	<span id="like_result"><%= clist.get(i).getLike_Cnt() %></span>
+                            <input class="btn btn-danger" id="like_btn" type="button" value="♥" onclick="like()" style="margin-bottom: 5px">
                         </td>
                         
                     </tr>
@@ -102,50 +122,10 @@
                 </div>
             </div>
         </div>
-
+		<%} %>
         <div style="width: 8%;"></div>
 
-            <div class="col-md-6 card border-info mb-3" style="width: 45%;">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                <table>
-                    <tr>
-                        <td width="20%"></td>
-                        <td >누구님의 리뷰</td>
-                    </tr>
-                    <tr >
-                        <td colspan="2" >이미지</td>
-                    </tr>
-                    <tr >
-                        <td colspan="2" >리뷰내용</td>
-                    </tr>
-                    <tr>
-                        <td width="250" align="right">
-                        	<span id="board_num"></span>
-                            <input class="btn btn-light" id="like_btn" type="button" value="좋아요" onclick="like()">
-                        </td>
-                        <td align="left">
-                            <span id="like_result"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                        <form class="d-flex">
-                            <input class="form-control me-sm-2"  placeholder="댓글을 입력하세요">
-                            <input class="btn btn-light" id="write_com" type="button" value="댓글작성">
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <ul id="comments" style="list-style:none; padding:0"></ul>
-                        </td>
-                    </tr>
-                </table>
-                </div>
-            </div>
-            </div>
-
+            
         </div>
     </div>
     
@@ -157,7 +137,7 @@
    var num = 1;
    $('#write_com').on('click', function(){
       var com = $('input[type=text]').val();
-      $('#comments').append('<li class="com'+num+'">'+com+'<input class="btn btn-light" type="button" value="댓글삭제" onclick="del('+num+')"></li>');
+      $('#comments').append('<li class="com'+num+'">'+com+'<input class="btn btn-outline-light" type="button" value="댓글삭제" style="margin-left: 10px" onclick="del('+num+')"></li>');
       num++;
       $('input[type=text]').val('');
    });
@@ -167,7 +147,7 @@
    }
    
    function like(){
-      if($('#like_btn').val()=="좋아요"){
+      if($('#like_btn').val()=="♥"){
          $.ajax({
             type : "post",
             data : {
@@ -178,7 +158,7 @@
             success : function(data){
                
                $('#like_result').html(data);
-               $('#like_btn').val('좋아요 취소');
+               $('#like_btn').val('♡ ');
             },
             error : function(){
                alert('실패!');
@@ -195,7 +175,7 @@
             success : function(data){
                
                $('#like_result').html(data);
-               $('#like_btn').val('좋아요');
+               $('#like_btn').val('♥');
             },
             error : function(){
                alert('실패!');
@@ -204,30 +184,30 @@
       }
    }
    
-   var data2 = [];
+//   var data2 = [];
 	/* 버튼 눌렀을 때 실행될 함수 */
-	function Recomend(){
-		 $.ajax({
-		   	 url : 'Recommend_Sevice', /* 데이터를 가지고 올 서블릿, JSP 등 주소 */
-		   	 success : function(data){
-		   		 alert("성공");
-		   		 console.log(data);
-		   		 data2 = data;
-		   		 $('div#cimg').append("<img src=" + JIMG +">");
-		   		 $('p#cname').append("<p>"+ JID +"</p>" );
-		   		 $('p#crecomend').append("<p>"+ JLEN +"</p>");
-		   		 $('p#avol').append("<p>"+ JVOL +"</p>");
-		   		 $('p#base').append("<p>"+ JBASE +"</p>");
-		   		 $('p#flavor').append("<p>"+ JFLAVOR +"</p>");
-		   		 $('p#ci').append("<p>"+ JINGREDIENT +"</p>");
-		   		 $('p#rec').append("<p>"+ JREC +"</p>");
-		   		 $('p#his').append("<p>"+ JHIS +"</p>");
-		   	 },
-		     	 error : function(){
-		     		 alert("실패");
-		     	 }
-		     });
-	}
+//	function Recomend(){
+//		 $.ajax({
+//		   	 url : 'Recommend_Sevice', /* 데이터를 가지고 올 서블릿, JSP 등 주소 */
+//		   	 success : function(data){
+//		   		 alert("성공");
+//		   		 console.log(data);
+//		   		 data2 = data;
+//		   		 $('div#cimg').append("<img src=" + JIMG +">");
+//		   		 $('p#cname').append("<p>"+ JID +"</p>" );
+//		   		 $('p#crecomend').append("<p>"+ JLEN +"</p>");
+//		   		 $('p#avol').append("<p>"+ JVOL +"</p>");
+//		   		 $('p#base').append("<p>"+ JBASE +"</p>");
+//	 	  		 $('p#flavor').append("<p>"+ JFLAVOR +"</p>");
+//		   		 $('p#ci').append("<p>"+ JINGREDIENT +"</p>");
+//		   		 $('p#rec').append("<p>"+ JREC +"</p>");
+//		   		 $('p#his').append("<p>"+ JHIS +"</p>");
+//		   	 },
+//		     	 error : function(){
+//		     		 alert("실패");
+//		     	 }
+//		     });
+//	}
 </script>
 
 </body>

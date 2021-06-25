@@ -8,8 +8,7 @@
     <title>INPUT</title>
     <link rel="stylesheet" href="css/bootstrap.css">
         <style>
-
-            h1{
+			h1{
                 text-align: center;
             }
             div.form-group{
@@ -18,21 +17,30 @@
                 margin: auto;
                 padding-bottom: 250px;
             }
-            
 
+      		div.container-fluid {
+                height: 50px;
+            }
+            
+            div#navbarColor01{
+            	float: right;
+            	text-align: right;
+            	font-family: COOKIERUN;
+            }
+            
         </style>
     </head>
     <body>
         <br>
-<% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
             <div class="container-fluid">
-              <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
+              <a class="navbar-brand" href="Main_page.jsp" style="font-family: COOKIERUN; font-size: 70px; ">MOODTAIL</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
           
-              <div class="collapse navbar-collapse" id="navbarColor01">
+              <div class="collapse navbar-collapse" id="navbarColor01" style="float: right;">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item">
                     <a class="nav-link active" href="Main_page.jsp">Home
@@ -43,32 +51,33 @@
                     <a class="nav-link" href="Community.jsp">Community</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Login.jsp">Login</a>
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Mypage.jsp">Mypage</a>
+                    <a class="nav-link" href="My_page.jsp">Mypage</a>
                   </li>
                 </ul>
-               
-                </div>
+                
+              </div>
             </div>
-        </nav>
+          </nav>
   
-        <div id="cock" class="form-group">
-        <form action="http://localhost:9003/Project_John" method="post">
-            <h1>칵테일 추천</h1>
+        <!-- <div id="cock" class="form-group"> -->
+        <form action="http://localhost:9005/Project_John" method="post">
+            <img id="Main_img" src="./C_IMG/Main_IMG.png" style="margin-left: 40%; margin-top: 250px; max-width: 600px; max-height: 400px">
             <br>
             <br>
-            <p class="lead" style="text-align: center;">당신의 오늘 하루를 적어주세요.</p>
+            <p class="lead" style="text-align: center; font-family: COOKIERUN; font-size: 100px;">당신의 오늘 하루를 적어주세요.</p>
             <p class="lead">
-            <input type="text" class="form-control" name="floatingInput" id="floatingInput">
+            <input type="text" class="card border-light mb-3" name="floatingInput" id="floatingInput" style="width: 1500px; height: 100px; margin-left: 24%; font-size: 50px; text-align: center; font-family: COOKIERUN;">
              <% if(info!= null){%>
             <input type="hidden"  class="form-control" name="FAVORITE_FLAVOR" id="FAVORITE_FLAVOR" value="<%=info.getFavotite_Flavor() %>">
             <input type="hidden" class="form-control" name="ALCOHOL_TYPE" id="ALCOHOL_TYPE" value="<%=info.getAlcohol_type() %>">
             <input type="hidden" class="form-control" name="USER_ID" id="USER_ID" value="<%=info.getId() %>">
             <br>
              <%}%>
-            <input type="submit" class="btn btn-outline-light" value="칵테일 추천 받기" style="width: 500px;">
+             <br>
+            <input type="submit" class="btn btn-light text-dark " value="오늘 나에게 어울리는 칵테일 보기" style="margin-left: 1000px; width: 900px; height: 100px; font-family: COOKIERUN; margin-bottom: 250px; font-size: 50px">
            
             </p>
         </form>
