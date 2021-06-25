@@ -25,7 +25,7 @@ CREATE TABLE W_USER(
 	Favotite_Flavor varchar2(50)
 )
 
-select * from Wi;
+select * from result;
 
 insert into W_USER values('abc', '123456', 'hola', '여자', 20, '위스키', 2, '단맛')
 
