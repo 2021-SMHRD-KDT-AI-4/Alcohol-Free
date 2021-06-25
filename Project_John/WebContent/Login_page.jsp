@@ -18,19 +18,32 @@
                 margin: auto;
                 padding-bottom: 14.5%;
             }
+            div.container-fluid {
+                height: 50px;
+            }
+            div#navbarColor01{
+            	float: right;
+            	text-align: right;
+            	font-family: COOKIERUN;
+            }
         </style>
     </head>
     <body>
         <br>
+<<<<<<< HEAD
  <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+=======
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/Alcohol-Free.git
             <div class="container-fluid">
-              <a class="navbar-brand" href="Main_page.jsp">Cocktail</a>
+              <a class="navbar-brand" href="Main_page.jsp" style="font-family: COOKIERUN; font-size: 70px;">MOODTAIL</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
           
-              <div class="collapse navbar-collapse" id="navbarColor01">
+              <div class="collapse navbar-collapse" id="navbarColor01" style="float: right;">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item">
                     <a class="nav-link active" href="Main_page.jsp">Home
@@ -43,7 +56,11 @@
                     <%if(info!= null) {%>
                  
                   <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link" href="LogoutService">Logout</a>
+=======
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/Alcohol-Free.git
                   </li>
                    <li class="nav-item">
                     <a class="nav-link" href="My_page.jsp">Mypage</a>
@@ -57,9 +74,10 @@
                  
                 </ul>
                 
-                </div>
+              </div>
             </div>
-        </nav>
+          </nav>
+
 
         <div class="form-group">
             <h1>로그인</h1>
@@ -76,7 +94,7 @@
 		            </div>
 		            <div class="d-grid gap-2">
 		                <br>
-		                <input class="btn btn-lg btn-primary" type="submit" value="로그인">
+		                <input class="btn btn-light text-dark" type="submit" value="로그인">
 		            </div>
             	</form>
             <div>아직 회원이 아니신가요? <a href="Join_page.jsp">회원가입</a>

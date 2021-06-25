@@ -26,10 +26,19 @@
               height: 300px;
               resize:none;
           }
+          div.container-fluid {
+                height: 50px;
+          }
+          div#navbarColor01{
+          		float: right;
+            	text-align: right;
+            	font-family: COOKIERUN;
+          }          
       </style>
   </head>
   <body>
         <br>
+<<<<<<< HEAD
  <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid">
@@ -65,7 +74,36 @@
                 
               </ul>
               
+=======
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Main_page.jsp" style="font-family: COOKIERUN; font-size: 70px;">MOODTAIL</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor01" style="float: right;">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Main_page.jsp">Home
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Community.jsp">Community</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Login_page.jsp">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="My_page.jsp">Mypage</a>
+                  </li>
+                </ul>
+                
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/Alcohol-Free.git
               </div>
+<<<<<<< HEAD
           </div>
       </nav>
 <% 
@@ -77,6 +115,10 @@
 		
 		%>
 		
+=======
+            </div>
+          </nav>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/Alcohol-Free.git
       
       <div id="cock" class="form-group">
           <h1><%=user_id %>丛狼 府轰 累己</h1>
@@ -102,7 +144,11 @@
           <textarea class="form-control" id="REVIEW" name="CONTENT"></textarea>
           <div id="test_cnt">(0 / 200)</div>
           <br>
+<<<<<<< HEAD
           <input type="submit" class="btn btn-light" value="府轰累己" style="width: 500px;">
+=======
+          <input type="submit" class="btn btn-light text-dark" value="府轰累己" style="width: 500px;" onclick="community_insult()">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/Alcohol-Free.git
 			</form>
       </div>
 
