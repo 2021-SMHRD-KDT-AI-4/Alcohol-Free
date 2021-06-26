@@ -58,6 +58,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="My_page.jsp">Mypage</a>
                   </li>
+                      <li class="nav-item">
+                <a class="nav-link" href="User_Update_page.jsp">Update</a>
+                </li>
                    <%}else{ %>
                    <li class="nav-item">
                     <a class="nav-link" href="Login_page.jsp">Login</a>
@@ -78,7 +81,7 @@
             <br>
             <p class="lead" style="text-align: center; font-family: COOKIERUN; font-size: 100px;">당신의 오늘 하루를 적어주세요.</p>
             <p class="lead">
-            <input type="text" class="card border-light mb-3" name="floatingInput" id="floatingInput" style="width: 1500px; height: 100px; margin-left: 24%; font-size: 50px; text-align: center; font-family: COOKIERUN;">
+            <input type="text" class="card border-light mb-3" name="floatingInput" id="floatingInput" style="width: 1500px; height: 100px; margin-left: 24%; font-size: 50px; text-align: center; font-family: COOKIERUN; color: #ffffff;">
              <% if(info!= null){%>
             <input type="hidden"  class="form-control" name="FAVORITE_FLAVOR" id="FAVORITE_FLAVOR" value="<%=info.getFavotite_Flavor() %>">
             <input type="hidden" class="form-control" name="ALCOHOL_TYPE" id="ALCOHOL_TYPE" value="<%=info.getAlcohol_type() %>">

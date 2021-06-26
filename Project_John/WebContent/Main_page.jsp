@@ -32,7 +32,7 @@
             
         </style>
     </head>
-    <body>
+    <body style="font-family: COOKIERUN;">
         <br>
         <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
@@ -61,6 +61,9 @@
                    <li class="nav-item">
                    <a class="nav-link" href="My_page.jsp">Mypage</a>
                   </li>
+                      <li class="nav-item">
+                <a class="nav-link" href="User_Update_page.jsp">Update</a>
+                </li>
                    <%}else{ %>
                    <li class="nav-item">
                     <a class="nav-link" href="Login_page.jsp">Login</a>

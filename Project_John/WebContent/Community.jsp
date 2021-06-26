@@ -34,7 +34,7 @@
             
         </style>
     </head>
-    <body>
+      <body style="font-family: COOKIERUN;">
         <br>
 <% MemberDTO info = (MemberDTO) session.getAttribute("info");  %>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
@@ -62,6 +62,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="My_page.jsp">Mypage</a>
                   </li>
+                      <li class="nav-item">
+                <a class="nav-link" href="User_Update_page.jsp">Update</a>
+                </li>
                    <%}else{ %>
                    <li class="nav-item">
                     <a class="nav-link" href="Login_page.jsp">Login</a>
@@ -79,7 +82,7 @@
     <br>
     <br>
     <br>
-    <h1>사용자 리뷰 보기</h1>
+    <h1 style="font-size: 80px">커뮤니티</h1>
     
     <br>
 <% CommunityDAO cdao = new CommunityDAO(); 
@@ -87,28 +90,29 @@
    
 
 %>
-    <div id="d1" class="container py-4" style="margin: auto;">
+    <div id="d1" class="container py-4" style="margin-left: 30%">
         <div class="row mb-2">
         <% for(int i=0; i<clist.size(); i++){ %>
             <div class="col-md-6 card border-info mb-3" style="width: 45%;">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
-                <table>
+                <table style="font-size: 30px">
                     <tr>
                         <td width="20%"><span id="board_num"><%=i+1%></span></td>
                         
-                        <td >제목 : <%= clist.get(i).getTITLE()%></td>
+                        <td>제목 : <%= clist.get(i).getTITLE()%></td>
                     </tr>
                     <tr >
-                        <td colspan="2" ><img  src="img/<%=clist.get(i).getUser_IMG()%>"></td>
+                        <td colspan="2" style="max-width: 150px; min-height: 150px;"><img  src="img/<%=clist.get(i).getUser_IMG()%>"></td>
                     </tr>
                     <tr >
                         <td colspan="2" ><%=clist.get(i).getPost()%></td>
+                        
                     </tr>
                     <tr>
                         <td width="250" align="right" colspan="2">
                         	
-                        	<span id="like_result"><%= clist.get(i).getLike_Cnt() %></span>
+                        	<span id="like_result<%=i+1%>"><%= clist.get(i).getLike_Cnt() %></span>
                             <input class="btn btn-danger" id="like_btn" type="button" value="♥" onclick="like()" style="margin-bottom: 5px">
                         </td>
                         

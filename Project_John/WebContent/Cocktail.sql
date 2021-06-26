@@ -30,7 +30,7 @@ select * from result;
 insert into W_USER values('abc', '123456', 'hola', '여자', 20, '위스키', 2, '단맛')
 
 DROP TABLE RESULT;
-
+delete from community;
 CREATE SEQUENCE R_NUM START WITH 1 INCREMENT BY 1;
 
 CREATE TABLE RESULT(
