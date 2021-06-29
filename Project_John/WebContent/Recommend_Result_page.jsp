@@ -111,7 +111,7 @@
  
  String pre = request.getParameter("data");
  
-  
+  //flask에서 넘어온 데이터 전처리(칵테일id와 사용자id,사용자가 입력한 한줄문구)
  String[] split_pre =pre.split("/");  
  String a1 = split_pre[1];
    String [] b1 = a1.split(",");
@@ -127,15 +127,14 @@
    System.out.println(user_id);
    System.out.println(a_1);
    System.out.println(result);  
+   //전처리한 데이터들 DB에 RESULT 테이블에 넣기(MVC패턴을 이용)
    ResultDAO rdao = new ResultDAO();
    ResultDTO rdto = new ResultDTO(user_id,a_1,result);
    int cnt = rdao.result_insert(rdto);
-   
+   //결과값을 칵테일 테이블과 매칭하여 관련 칵테일 정보를 불러옴(MVC패턴을 이용)
    CocktailDAO dao = new CocktailDAO();   
    CocktailDTO cinfo = dao.C_Info(result);
    
-   WishlistDAO wdao = new WishlistDAO();
-   WishlistDTO wdto = new WishlistDTO(user_id,a_1,result);
    
    
 %>
@@ -202,6 +201,7 @@
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 찜기능 Ajax이용하여 구현  -->
     <script src="./js/jquery-3.6.0.min.js"></script>
    <script>
 
@@ -213,7 +213,7 @@
          type : "post",  //데이터 전송 방식 
          data :  {"cocktail_id":cocktail_id,
             "user_id":user_id,
-            "a_1":a_1} ,
+            "a_1":a_1} ,// 보낼 칵테일이름, 사용자id,사용자가 입력한 한줄 문구 데이터
          url : "Wishlist_Service", // 서버 파일 이름 
          dataType : "text", // 서버에서 오는 응답방식  
          success : function(data){
