@@ -143,7 +143,7 @@
 						url: "IdCheck_Service",	
 						dataType: "text",		
 						success: function(data) {
-							alert(data);
+							
 							if(data=='true'){
 								$('#sp1').html("불가능한 ID입니다.");
 							}else{

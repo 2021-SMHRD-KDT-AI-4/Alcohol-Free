@@ -112,7 +112,7 @@
                     <tr>
                         <td width="250" align="right" colspan="2">
                         	
-                        	<span id="like_result<%=i+1%>"><%= clist.get(i).getLike_Cnt() %></span>
+                        	<span id="like_result"><%= clist.get(i).getLike_Cnt() %></span>
                             <input class="btn btn-danger" id="like_btn" type="button" value="¢¾" onclick="like()" style="margin-bottom: 5px">
                         </td>
                         

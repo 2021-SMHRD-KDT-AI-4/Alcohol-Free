@@ -74,11 +74,7 @@
                   </li>
                    
                   <%} %>
-                  <li class="nav-item">
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="My_page.jsp">Mypage</a>
-                  </li>
+                  
                 </ul>
                 
 
